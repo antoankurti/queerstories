@@ -1,0 +1,27 @@
+/* CSS into SASS CODE START */
+
+/* GENERAL PART OF CSS */
+
+:root {
+    background-color: $primo;
+}
+* {
+
+    padding: 0;
+    margin: 0;
+    //    background-color: yellow;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    background-color: $primo;
+}

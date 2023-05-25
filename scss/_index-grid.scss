@@ -1,0 +1,43 @@
+/* INDEX */
+
+main {
+
+    $vignette-size: calc((100vw) / 3.8);
+
+    .container {
+        display: grid;
+        grid-gap: 0.2rem;
+        grid-template-columns: repeat(3, $vignette-size);
+
+        .image {
+            position: relative;
+            width: $vignette-size;
+            height: $vignette-size;
+            overflow: hidden;
+            padding: 0;
+            margin: 0;
+            border-radius: 0.15rem;
+            opacity: 0.7;
+            transition: 0.5s ease;
+        }
+        .image:hover {
+            opacity: 1;
+        }
+
+        p {
+            position: absolute;
+            left: 0.4rem;
+            bottom: 0.2rem;
+            font-family: "Jost";
+            font-size: 0.8rem;
+            font-weight: 600;
+            padding: unset;
+            margin: unset;
+            color: $primo;
+            text-shadow: 0.2rem 0.1rem 0.2rem $klein;
+        }
+        img {
+            width: 40vw;
+        }
+    }
+}

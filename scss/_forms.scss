@@ -1,0 +1,43 @@
+/* CONTACT PAGE */
+
+form {
+    // background-color: $klein;
+    /* :focus-within {
+        background-color: unset;
+    } */
+}
+
+label {
+    display: block;
+    margin: 1em;
+    color: $klein;
+    margin-left:0;  
+}
+
+input,
+textarea {
+    display: block;
+    border: solid 2px $klein;
+    background-color: $primo;
+    width: 100%;
+    font-weight: 300;
+    font-size: 1rem;
+    color: $klein;
+    padding: 0.75em 0.5em;
+    margin-top: 0.3em;
+}
+
+textarea {
+    height:20vh;
+    resize: none;
+}
+
+.button {
+    display: block;
+    margin-top: 1em;
+    margin-left: auto;
+    width: auto;
+    padding: 0.5em 1.5em;
+    color: $klein;
+    font-size: 1rem;
+}

@@ -1,0 +1,560 @@
+/* MEDIA SIZES  */
+/* SCREEN SIZES  */
+/* MAIN DIV SIZE MOSTLY USED FOR */
+/* 980 px screen  */
+/* MIXINS  */
+/* CSS into SASS CODE START */
+/* GENERAL PART OF CSS */
+@import url("https://fonts.googleapis.com/css2?family=Ibarra+Real+Nova:wght@600&family=Inconsolata:wght@500&family=Jost:wght@300;500;700&family=Lacquer&Major+Mono+Display&family=Permanent+Marker&family=Zilla+Slab+Highlight&display=swap");
+:root {
+  background-color: #fafafa;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  background-color: #fafafa;
+}
+
+/* Import elements */
+:root {
+  font-family: sans-serif !important;
+  color: #14161a;
+  font-size: calc(1vw + 1vh + 0.5vmin);
+}
+
+h1,
+h2,
+h3,
+a {
+  font-family: "Jost";
+}
+
+a {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+h1 {
+  text-transform: uppercase;
+  color: #0004ff;
+  font-size: 1.8em;
+  font-weight: lighter;
+  -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto;
+  margin-top: 1em;
+}
+
+h2 {
+  padding-top: 2em;
+  font-weight: 400;
+}
+
+p {
+  font-weight: lighter;
+  line-height: 1.6em;
+  margin: 1rem 0 0.5rem 0;
+}
+
+/* LINKS */
+a {
+  font-size: 0.8em;
+  font-weight: 500;
+  color: #14161a;
+  text-decoration: none;
+  -webkit-transition: color 200ms;
+  transition: color 200ms;
+}
+
+a:hover {
+  color: #0004ff;
+  -webkit-transition: color 200ms;
+  transition: color 200ms;
+}
+
+a.active {
+  color: #fabcbc;
+}
+
+footer {
+  color: #14161a;
+}
+
+footer a {
+  font-size: 1em;
+  font-family: "Inconsolata";
+}
+
+footer a:hover {
+  color: #00ff81;
+}
+
+footer p {
+  padding: 0;
+}
+
+@media screen and (min-width: 980px) {
+  a {
+    font-size: 1.8em;
+  }
+  footer a {
+    font-size: 0.6em;
+  }
+}
+
+header {
+  position: relative;
+  width: 80vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding-bottom: 1rem;
+  padding-top: 2rem;
+}
+
+header nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
+}
+
+header h1 {
+  -webkit-box-ordinal-group: 3;
+      -ms-flex-order: 2;
+          order: 2;
+}
+
+/* Pour telephone paysage
+@media screen and (min-width: 320px) and (max-width: 640px) and (orientation: landscape) { */
+@media screen and (min-width: 980px) {
+  header {
+    width: 870px;
+  }
+  header nav {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  header {
+    width: 1215px;
+  }
+}
+
+/* DECORATION */
+.hr {
+  margin: 10px 0;
+  height: 2px;
+  background-image: -webkit-gradient(linear, left top, right top, from(#0004ff), to(#fabcbc));
+  background-image: linear-gradient(90deg, #0004ff, #fabcbc);
+}
+
+/* INDEX */
+main .container {
+  display: -ms-grid;
+  display: grid;
+  grid-gap: 0.2rem;
+  -ms-grid-columns: (calc((100vw) / 3.8))[3];
+      grid-template-columns: repeat(3, calc((100vw) / 3.8));
+}
+
+main .container .image {
+  position: relative;
+  width: calc((100vw) / 3.8);
+  height: calc((100vw) / 3.8);
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+  border-radius: 0.15rem;
+  opacity: 0.7;
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
+}
+
+main .container .image:hover {
+  opacity: 1;
+}
+
+main .container p {
+  position: absolute;
+  left: 0.4rem;
+  bottom: 0.2rem;
+  font-family: "Jost";
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: unset;
+  margin: unset;
+  color: #fafafa;
+  text-shadow: 0.2rem 0.1rem 0.2rem #0004ff;
+}
+
+main .container img {
+  width: 40vw;
+}
+
+.sao-paulo {
+  background-image: url("../media/sao_paulo/photo/IMG_7817.jpg") !important;
+}
+
+/* CONTAINER */
+.media-content {
+  width: 80vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-flow: column nowrap;
+      flex-flow: column nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  /* audio {
+        width: $full-width;
+        height: $full-height - 40vw;
+        background: $poudre;
+        background-image: url(/media/sao_paulo/photo/IMG_7791.jpg);
+    } */
+  /* PARALAX *** CONTAINS MOSTLY THE NAME OF THE CITY and sometimesother info */
+  /* dramatic phrasis about deaths or murders with a blood effect */
+}
+
+.media-content .text-content {
+  width: 80vw;
+  padding: 3rem 0 3rem 0;
+}
+
+.media-content video,
+.media-content img {
+  width: 100vw;
+}
+
+.media-content video .peoples-names-list,
+.media-content img .peoples-names-list {
+  padding: 50px 100px;
+}
+
+.media-content .paralax {
+  width: 100vw;
+  height: 120vh;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  min-height: 10em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.media-content .paralax h1 {
+  text-align: center;
+  color: #fafafa;
+  font-size: 1.2rem;
+  font-weight: 700;
+  -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto;
+}
+
+.media-content .drama {
+  width: 80vw;
+  font-family: "Permanent Marker";
+  font-size: 2.4rem;
+  color: #14161a;
+  text-align: center;
+  margin: 5rem 5rem;
+}
+
+.media-content .drama .story {
+  background-color: #fabcbc;
+}
+
+.media-content .drama .story p {
+  font-family: "zilla slab highlight";
+  font-size: 0.5em;
+  width: 50vw;
+}
+
+.media-content .murder-story {
+  width: auto;
+  font-family: "Lacquer";
+  font-size: 1.2rem;
+  -webkit-transform: rotate(-6.5deg);
+          transform: rotate(-6.5deg);
+}
+
+.media-content .murder-story p {
+  padding: unset;
+}
+
+.media-content .murder-story p span {
+  font-size: 1.4rem;
+  color: firebrick;
+}
+
+.written-content {
+  width: 80vw;
+}
+
+@media screen and (min-width: 980px) {
+  .media-content {
+    width: 870px;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+    gap: 0 0;
+    grid-auto-flow: dense;
+  }
+  .media-content .text-content {
+    max-width: 290px;
+    max-height: 515.55556px;
+    display: block;
+    padding: 0;
+    overflow: auto;
+    -webkit-transition: opacity ease 0.3s;
+    transition: opacity ease 0.3s;
+    opacity: 0.5;
+    background-color: #fabcbc;
+  }
+  .media-content .text-content h2 {
+    margin: 1rem;
+  }
+  .media-content .text-content p {
+    margin: 1rem;
+    font-size: 0.7rem;
+    padding: 0;
+  }
+  .media-content .text-content:hover {
+    background-color: #fafafa;
+    opacity: 1;
+  }
+  .media-content .paralax,
+  .media-content .peoples-names-list,
+  .media-content video,
+  .media-content img {
+    max-width: 290px;
+    max-height: 515.55556px;
+  }
+  .media-content .peoples-names-list h3 {
+    margin: 1rem;
+  }
+  .media-content .paralax h1 {
+    font-size: 0.7rem;
+    font-weight: 300;
+  }
+  .media-content .drama {
+    max-width: 290px;
+    max-height: 515.55556px;
+    font-size: 1rem;
+    margin: 0;
+  }
+  .media-content .drama p {
+    margin: 1rem;
+    padding: 0;
+  }
+  .media-content .murder-story {
+    padding: 0;
+    margin: 0;
+    font-size: 0.5rem;
+    -webkit-transform: unset;
+            transform: unset;
+  }
+  .media-content .murder-story p {
+    line-height: 1.4rem;
+  }
+  .media-content .murder-story p span {
+    font-size: 0.7rem;
+  }
+  .written-content {
+    width: 870px;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .media-content {
+    width: 1215px;
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+  }
+  .media-content .text-content {
+    max-width: 405px;
+    max-height: 720px;
+  }
+  .media-content .paralax,
+  .media-content .peoples-names-list,
+  .media-content video,
+  .media-content img {
+    max-width: 405px;
+    max-height: 720px;
+  }
+  .media-content .drama {
+    max-width: 405px;
+    max-height: 720px;
+  }
+  .written-content {
+    width: 1215px;
+  }
+}
+
+/* CONTACT PAGE */
+form {
+  /* :focus-within {
+        background-color: unset;
+    } */
+}
+
+label {
+  display: block;
+  margin: 1em;
+  color: #0004ff;
+  margin-left: 0;
+}
+
+input,
+textarea {
+  display: block;
+  border: solid 2px #0004ff;
+  background-color: #fafafa;
+  width: 100%;
+  font-weight: 300;
+  font-size: 1rem;
+  color: #0004ff;
+  padding: 0.75em 0.5em;
+  margin-top: 0.3em;
+}
+
+textarea {
+  height: 20vh;
+  resize: none;
+}
+
+.button {
+  display: block;
+  margin-top: 1em;
+  margin-left: auto;
+  width: auto;
+  padding: 0.5em 1.5em;
+  color: #0004ff;
+  font-size: 1rem;
+}
+
+/* contains only external links */
+footer {
+  width: 80vw;
+  padding: 20px 0;
+}
+
+footer nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-top: 10px;
+}
+
+@media screen and (min-width: 980px) {
+  footer {
+    width: 870px;
+  }
+  footer nav {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  footer {
+    width: 1215px;
+  }
+}
+
+/* page scroll bar */
+#scroll-bar {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+#scroll-bar #scroll-indicator {
+  /* position: absolute;
+        z-index: 999; */
+  top: 0;
+  width: 100vw;
+  height: 0.25em;
+  /*         background: linear-gradient(
+            90deg,
+            rgb(255, 0, 0),
+            rgb(255, 153, 0),
+            rgb(255, 251, 0),
+            rgb(0, 143, 0),
+            rgb(0, 15, 150),
+            rgb(146, 0, 146)
+        ); */
+  background: -webkit-gradient(linear, left top, right top, from(#0004ff), color-stop(95%, #fabcbc));
+  background: linear-gradient(90deg, #0004ff, #fabcbc 95%);
+}
+/*# sourceMappingURL=styles.css.map */

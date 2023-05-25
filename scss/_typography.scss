@@ -1,0 +1,90 @@
+/* Import elements */
+
+@import url("https://fonts.googleapis.com/css2?family=Ibarra+Real+Nova:wght@600&family=Inconsolata:wght@500&family=Jost:wght@300;500;700&family=Lacquer&Major+Mono+Display&family=Permanent+Marker&family=Zilla+Slab+Highlight&display=swap");
+
+:root {
+    font-family: sans-serif !important;
+    color: $secundo;
+    font-size: calc(1vw + 1vh + 0.5vmin);
+}
+
+h1,
+h2,
+h3,
+a {
+    font-family: "Jost";
+    // margin-top: 1.5em;
+}
+a {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+h1 {
+    text-transform: uppercase;
+    color: $klein;
+    font-size: 1.8em;
+    font-weight: lighter;
+    hyphens: auto;
+    margin-top: 1em;
+}
+
+h2 {
+    // background-color: yellow;
+    padding-top: 2em;
+    font-weight: 400;
+}
+
+p {
+    // background-color: yellow;
+    font-weight: lighter;
+    line-height: 1.6em;
+    margin: 1rem 0 0.5rem 0;
+}
+
+/* LINKS */
+
+a {
+    font-size: 0.8em;
+    font-weight: 500;
+    color: $secundo;
+    text-decoration: none;
+    transition: color 200ms;
+
+    &:hover {
+        color: $klein;
+        transition: color 200ms;
+    }
+    &.active {
+        color: $poudre;
+    }
+}
+
+footer {
+    color: $secundo;
+
+    a {
+        font-size: 1em;
+        font-family: "Inconsolata";
+    }
+
+    a:hover {
+        color: $external-link;
+    }
+
+    p {
+        padding: 0;
+    }
+}
+
+    @media screen and (min-width:980px) {
+        a {
+             font-size: 1.8em;
+        }
+
+        footer {
+            a {
+                font-size: 0.6em;
+            }
+        }
+    }

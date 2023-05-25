@@ -1,0 +1,202 @@
+/* CONTAINER */
+.media-content {
+    width: $small-size;
+
+    display: flex;
+    flex-direction: column;
+    flex-flow: column nowrap;
+    align-items: center;
+
+    .text-content {
+        width: $small-size;
+        padding: 3rem 0 3rem 0;
+    }
+
+    video,
+    img {
+        width: $full-width;
+
+        .peoples-names-list {
+            padding: 50px 100px;
+        }
+    }
+
+    /* audio {
+        width: $full-width;
+        height: $full-height - 40vw;
+        background: $poudre;
+        background-image: url(/media/sao_paulo/photo/IMG_7791.jpg);
+    } */
+
+    /* PARALAX *** CONTAINS MOSTLY THE NAME OF THE CITY and sometimesother info */
+    .paralax {
+        width: $full-width;
+        height: 120vh;
+        background-size: cover;
+        // back
+        background-position: center;
+        background-attachment: fixed;
+
+        min-height: 10em;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        h1 {
+            text-align: center;
+            color: $primo;
+            font-size: 1.2rem;
+            font-weight: 700;
+            hyphens: auto;
+        }
+    }
+
+    .drama {
+        width: $small-size;
+        font-family: "Permanent Marker";
+        font-size: 2.4rem;
+        color: $secundo;
+        text-align: center;
+        margin: 5rem 5rem;
+
+        .story {
+            background-color: $poudre;
+
+            p {
+                font-family: "zilla slab highlight";
+                font-size: 0.5em;
+                width: 50vw;
+            }
+        }
+    }
+
+    /* dramatic phrasis about deaths or murders with a blood effect */
+
+    .murder-story {
+        width: auto;
+        font-family: "Lacquer";
+        font-size: 1.2rem;
+        transform: rotate(-6.5deg);
+
+        p {
+            padding: unset;
+
+            span {
+                font-size: 1.4rem;
+                color: firebrick;
+            }
+        }
+    }
+}
+
+.written-content {
+    width: $small-size;
+}
+
+@media screen and (min-width: 980px) {
+    .media-content {
+        width: $m-main-width;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    
+        gap: 0 0;
+        grid-auto-flow: dense;
+
+        .text-content {
+            @include mm-size;
+            display: block;
+            padding: 0;
+            overflow: auto;
+            transition: opacity ease 0.3s;
+            opacity: 0.5;
+            background-color: $poudre;
+
+            h2 {
+                margin: 1rem;
+            }
+
+            p {
+                margin: 1rem;
+                font-size: 0.7rem;
+                padding: 0;
+            }
+        }
+
+        .text-content:hover {
+            background-color: $primo;
+            opacity: 1;
+        }
+
+        .paralax,
+        .peoples-names-list,
+        video,
+        img {
+            @include mm-size;
+        }
+
+        .peoples-names-list h3 {
+            margin: 1rem;
+        }
+
+        .paralax h1 {
+            font-size: 0.7rem;
+            font-weight: 300;
+        }
+
+        .drama {
+            // display: block;
+            @include mm-size;
+            font-size: 1rem;
+            margin: 0;
+
+            p {
+                margin: 1rem;
+                padding: 0;
+            }
+        }
+
+        .murder-story {
+            padding: 0;
+            margin: 0;
+            font-size: 0.5rem;
+            transform: unset;
+
+            p {
+                line-height: 1.4rem;
+
+                span {
+                    font-size: 0.7rem;
+                }
+            }
+        }
+    }
+    .written-content {
+        width: $m-main-width;
+    }
+}
+
+@media screen and (min-width: 1400px) {
+    .media-content {
+        width: $l-main-width;
+        grid-template-columns: repeat(3, 1fr);
+
+        .text-content {
+            @include lm-size;
+        }
+
+        .paralax,
+        .peoples-names-list,
+        video,
+        img {
+            @include lm-size;
+        }
+
+        .drama {
+            @include lm-size;
+        }
+    }
+    .written-content {
+        width: $l-main-width;
+    }
+}

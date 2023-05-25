@@ -1,0 +1,29 @@
+/* contains only external links */
+
+footer {
+    width: $small-size;;
+    padding: 20px 0;
+
+    nav {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-between;
+        padding-top: 10px;
+    }
+}
+
+@media screen and (min-width: 980px) {
+    footer {
+        width: $m-main-width;
+        nav {
+            flex-direction: row;
+        }
+    }
+}
+
+@media screen and (min-width: 1400px) {
+    footer {
+        width: $l-main-width;
+    }
+}

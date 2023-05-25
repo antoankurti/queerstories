@@ -1,0 +1,38 @@
+header {
+    position: relative;
+    width: $small-size;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 1rem;
+    padding-top: 2rem;
+
+    nav {
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        order: 1;
+    }
+    h1 {
+        order: 2;
+    }
+}
+
+/* Pour telephone paysage
+@media screen and (min-width: 320px) and (max-width: 640px) and (orientation: landscape) { */
+
+@media screen and (min-width: 980px) {
+    header {
+        width: $m-main-width;
+
+        nav {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+    }
+}
+
+@media screen and (min-width: 1400px) {
+    header {
+        width: $l-main-width;
+    }
+}

@@ -1,0 +1,313 @@
+@import url(https://fonts.googleapis.com/css2?family=Ibarra + Real + Nova:wght@600&family=Inconsolata:wght@500&family=Jost:wght@300;500;700&family=Lacquer&Major + Mono + Display&family=Permanent + Marker&family=Zilla + Slab + Highlight&display=swap);
+:root {
+  background-color: #fafafa;
+}
+* {
+  padding: 0;
+  margin: 0;
+}
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  background-color: #fafafa;
+}
+:root {
+  font-family: sans-serif;
+  color: #14161a;
+  background-color: #fafafa;
+  font-size: calc(1vw + 1vh + 0.5vmin);
+}
+a,
+h1,
+h2,
+h3 {
+  font-family: Jost;
+}
+a {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+h1 {
+  text-transform: uppercase;
+  color: #0004ff;
+  font-size: 2.2em;
+  font-weight: lighter;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+}
+h2 {
+  padding-top: 2em;
+  font-weight: 500;
+}
+p {
+  font-weight: lighter;
+  line-height: 1.6em;
+  margin: 1rem 0 0.5rem 0;
+}
+a {
+  font-size: 1.2em;
+  font-weight: 500;
+  color: #14161a;
+  text-decoration: none;
+  -webkit-transition: color 0.2s;
+  transition: color 0.2s;
+}
+a:hover {
+  color: #0004ff;
+  -webkit-transition: color 0.2s;
+  transition: color 0.2s;
+}
+a.active {
+  color: #fabcbc;
+}
+footer {
+  color: #14161a;
+}
+footer a {
+  font-size: 1em;
+  font-family: Inconsolata;
+}
+footer a:hover {
+  color: #00ff81;
+}
+footer p {
+  padding: 0;
+}
+header {
+  position: relative;
+  width: 80vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding-bottom: 3rem;
+  padding-top: 2rem;
+}
+header nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: column;
+  flex-flow: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-ordinal-group: 2;
+  -ms-flex-order: 1;
+  order: 1;
+}
+header h1 {
+  -webkit-box-ordinal-group: 3;
+  -ms-flex-order: 2;
+  order: 2;
+}
+#prlxSp {
+  width: 100vw;
+  height: 120vh;
+  background-image: url(../media/Sao_Paulo/photo/IMG_7817.jpg) !important;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  min-height: 10em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+#prlxSp h1 {
+  text-align: center;
+  color: #fafafa;
+  font-size: 1.2rem;
+  font-weight: 700;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+}
+blockquote {
+  width: 80vw;
+  font-family: "Permanent Marker";
+  font-size: 2.4rem;
+  color: #14161a;
+  text-align: center;
+  margin: 5rem 5rem;
+}
+blockquote .story {
+  background-color: #fabcbc;
+}
+blockquote .story p {
+  font-family: "zilla slab highlight";
+  font-size: 0.5em;
+  width: 50vw;
+}
+.murderStory {
+  width: auto;
+  font-family: Lacquer;
+  font-size: 1.2rem;
+  -webkit-transform: rotate(-6.5deg);
+  transform: rotate(-6.5deg);
+}
+.murderStory p {
+  padding: unset;
+}
+.murderStory p span {
+  font-size: 1.4rem;
+  color: #c50000;
+}
+.hr {
+  margin: 10px 0;
+  height: 2px;
+  background-image: -webkit-gradient(linear, left top, right top, from(#0004ff), to(#fabcbc));
+  background-image: linear-gradient(90deg, #0004ff, #fabcbc);
+}
+main {
+  width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -ms-flex-flow: column nowrap;
+  flex-flow: column nowrap;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+main article {
+  width: 80vw;
+  padding: 3rem 0 3rem 0;
+}
+main img,
+main video {
+  width: 100vw;
+}
+main img .peopleNamesList,
+main video .peopleNamesList {
+  padding: 50px 100px;
+}
+.small-size {
+  width: 80vw;
+}
+label {
+  display: block;
+  margin: 1em;
+  color: #0004ff;
+  margin-left: 0;
+}
+input,
+textarea {
+  display: block;
+  border: solid 2px #0004ff;
+  background-color: #fafafa;
+  width: 100%;
+  font-weight: 300;
+  font-size: 1rem;
+  color: #0004ff;
+  padding: 0.75em 0.5em;
+  margin-top: 0.3em;
+}
+textarea {
+  height: 20vh;
+  resize: none;
+}
+.button {
+  display: block;
+  margin-top: 1em;
+  margin-left: auto;
+  width: auto;
+  padding: 0.5em 1.5em;
+  color: #0004ff;
+  font-size: 1rem;
+}
+main .container {
+  display: -ms-grid;
+  display: grid;
+  grid-gap: 0.2rem;
+  -ms-grid-columns: (calc((100vw) / 3.8)) [3];
+  grid-template-columns: repeat(3, calc((100vw) / 3.8));
+}
+main .container .image {
+  position: relative;
+  width: calc((100vw) / 3.8);
+  height: calc((100vw) / 3.8);
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+  border-radius: 0.15rem;
+  opacity: 0.7;
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
+}
+main .container .image:hover {
+  opacity: 1;
+}
+main .container p {
+  position: absolute;
+  left: 0.4rem;
+  bottom: 0.2rem;
+  font-family: Jost;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: unset;
+  margin: unset;
+  color: #fafafa;
+  text-shadow: 0.2rem 0.1rem 0.2rem #0004ff;
+}
+main .container img {
+  width: 40vw;
+}
+footer {
+  min-width: 80vw;
+  padding: 20px 0;
+}
+footer nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding-top: 10px;
+}
+#scroll-bar {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+#scroll-bar #scroll-indicator {
+  top: 0;
+  width: 100vw;
+  height: 0.25em;
+  background: -webkit-gradient(linear, left top, right top, from(#0004ff), color-stop(95%, #fabcbc));
+  background: linear-gradient(90deg, #0004ff, #fabcbc 95%);
+}
