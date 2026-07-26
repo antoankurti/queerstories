@@ -72,7 +72,7 @@ async function buildPage() {
         }
 
         else if (item.type === 'video') {
-            main.innerHTML += `<video src="${city.media}${item.src}" controls muted autoplay></video>`;
+            main.innerHTML += `<video src="${city.media}${item.src}" loop></video>`;
         }
 
         else if (item.type === 'parallax') {
@@ -101,6 +101,25 @@ async function buildPage() {
             main.innerHTML += `<div class="${cssClass}">${html}</div>`;
         }
     }
+
+    // Lance le contrôle vidéo après que tout le contenu est chargé
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            const video = entry.target;
+            const ratio = entry.intersectionRatio;
+            if (ratio === 0) {
+                video.pause();
+                video.volume = 0;
+            } else {
+                video.volume = Math.min(ratio * 2, 1);
+                video.play().catch(() => {});
+            }
+        });
+    }, { threshold: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0] });
+
+    document.querySelectorAll('video').forEach(video => {
+        observer.observe(video);
+    });
 }
 
 buildPage();
