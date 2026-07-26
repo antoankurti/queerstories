@@ -1,3 +1,5 @@
+@use 'config' as *;
+
 /* page scroll bar */
 
 #scroll-bar {
@@ -7,21 +9,11 @@
     overflow: hidden;
 
     #scroll-indicator {
-        /* position: absolute;
-        z-index: 999; */
         top: 0;
         width: 100vw;
         height: 0.25em;
 
-        /*         background: linear-gradient(
-            90deg,
-            rgb(255, 0, 0),
-            rgb(255, 153, 0),
-            rgb(255, 251, 0),
-            rgb(0, 143, 0),
-            rgb(0, 15, 150),
-            rgb(146, 0, 146)
-        ); */
-        background: linear-gradient(90deg, $klein, $poudre 95%);
+background: linear-gradient(90deg, $color-primary 20%, $color-secondary 67%);
+background-size: 300% 100%;
     }
 }

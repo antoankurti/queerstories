@@ -1,7 +1,9 @@
+@use 'config' as *;
+
 /* CONTACT PAGE */
 
 form {
-    // background-color: $klein;
+    // background-color: $color-primary;
     /* :focus-within {
         background-color: unset;
     } */
@@ -10,19 +12,19 @@ form {
 label {
     display: block;
     margin: 1em;
-    color: $klein;
+    color: $color-primary;
     margin-left:0;  
 }
 
 input,
 textarea {
     display: block;
-    border: solid 2px $klein;
-    background-color: $primo;
+    border: solid 2px $color-primary;
+    background-color: $color-bg;
     width: 100%;
     font-weight: 300;
     font-size: 1rem;
-    color: $klein;
+    color: $color-primary;
     padding: 0.75em 0.5em;
     margin-top: 0.3em;
 }
@@ -38,6 +40,6 @@ textarea {
     margin-left: auto;
     width: auto;
     padding: 0.5em 1.5em;
-    color: $klein;
+    color: $color-primary;
     font-size: 1rem;
 }

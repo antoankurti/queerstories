@@ -1,0 +1,33 @@
+{
+  "id": "sao_paulo_2020",
+  "name": "Sao Paulo",
+  "year": "2020",
+  "media": "media/sao_paulo/2020/",
+  "texts": "media/sao_paulo/2020/texts.md",
+  "content": [
+    { "type": "image", "src": "photo/IMG_7817.jpg" },
+    { "type": "image", "src": "photo/000098240012.jpg" },
+    { "type": "people-list" },
+    { "type": "image", "src": "photo/IMG_7818.jpg" },
+    { "type": "image", "src": "photo/000098240008.jpg" },
+    { "type": "text", "id": "text_01", "style": "narrative" },
+    { "type": "video", "src": "video/IMG_7818.MOV" },
+    { "type": "image", "src": "photo/2020-03-17_18.24.09.jpg" },
+    { "type": "image", "src": "photo/000098240021.jpg" },
+    { "type": "text", "id": "text_03", "style": "highlight" },
+    { "type": "image", "src": "photo/2020-03-11_13.56.52.jpg" },
+    { "type": "image", "src": "photo/IMG_7683.jpg" },
+    { "type": "text", "id": "text_02", "style": "quote" },
+    { "type": "image", "src": "photo/IMG_7640.jpg" },
+    { "type": "image", "src": "photo/IMG_7530.jpg" },
+    { "type": "image", "src": "photo/2020-03-10_07.58.56.jpg" },
+    { "type": "image", "src": "photo/IMG_7733.jpg" },
+    { "type": "parallax", "src": "photo/IMG_7817.jpg" },
+    { "type": "image", "src": "photo/2020-03-21_12.52.12.jpg" },
+    { "type": "image", "src": "photo/2020-03-20_15.05.28.jpg" },
+    { "type": "video", "src": "video/IMG_8085.MOV" },
+    { "type": "image", "src": "photo/000098240012.jpg" },
+    { "type": "image", "src": "photo/000098240010.jpg" },
+    { "type": "image", "src": "photo/000098240018.jpg" }
+  ]
+}

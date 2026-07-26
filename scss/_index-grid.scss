@@ -1,3 +1,5 @@
+@use 'config' as *;
+
 /* INDEX */
 
 main {
@@ -6,7 +8,7 @@ main {
 
     .container {
         display: grid;
-        grid-gap: 0.2rem;
+        gap: 0.2rem;
         grid-template-columns: repeat(3, $vignette-size);
 
         .image {
@@ -28,16 +30,18 @@ main {
             position: absolute;
             left: 0.4rem;
             bottom: 0.2rem;
-            font-family: "Jost";
+            font-family: $font-main;
             font-size: 0.8rem;
             font-weight: 600;
             padding: unset;
             margin: unset;
-            color: $primo;
-            text-shadow: 0.2rem 0.1rem 0.2rem $klein;
+            color: $color-bg;
+            text-shadow: 0.2rem 0.1rem 0.2rem $color-primary;
         }
         img {
-            width: 40vw;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
     }
 }

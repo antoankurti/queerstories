@@ -1,3 +1,5 @@
+@use 'config' as *;
+
 /* CONTAINER */
 .media-content {
     width: $small-size;
@@ -24,7 +26,7 @@
     /* audio {
         width: $full-width;
         height: $full-height - 40vw;
-        background: $poudre;
+        background: $color-secondary;
         background-image: url(/media/sao_paulo/photo/IMG_7791.jpg);
     } */
 
@@ -45,7 +47,7 @@
 
         h1 {
             text-align: center;
-            color: $primo;
+            color: $color-bg;
             font-size: 1.2rem;
             font-weight: 700;
             hyphens: auto;
@@ -54,17 +56,17 @@
 
     .drama {
         width: $small-size;
-        font-family: "Permanent Marker";
+        font-family: $font-marker;
         font-size: 2.4rem;
-        color: $secundo;
+        color: $color-text;
         text-align: center;
         margin: 5rem 5rem;
 
         .story {
-            background-color: $poudre;
+            background-color: $color-secondary;
 
             p {
-                font-family: "zilla slab highlight";
+                font-family: $font-highlight;
                 font-size: 0.5em;
                 width: 50vw;
             }
@@ -75,7 +77,7 @@
 
     .murder-story {
         width: auto;
-        font-family: "Lacquer";
+        font-family: $font-lacquer;
         font-size: 1.2rem;
         transform: rotate(-6.5deg);
 
@@ -84,7 +86,7 @@
 
             span {
                 font-size: 1.4rem;
-                color: firebrick;
+                color: $color-accent;
             }
         }
     }
@@ -94,7 +96,7 @@
     width: $small-size;
 }
 
-@media screen and (min-width: 980px) {
+@media screen and (min-width: $bp-medium) {
     .media-content {
         width: $m-main-width;
         display: grid;
@@ -110,7 +112,7 @@
             overflow: auto;
             transition: opacity ease 0.3s;
             opacity: 0.5;
-            background-color: $poudre;
+            background-color: $color-secondary;
 
             h2 {
                 margin: 1rem;
@@ -124,7 +126,7 @@
         }
 
         .text-content:hover {
-            background-color: $primo;
+            background-color: $color-bg;
             opacity: 1;
         }
 
@@ -176,7 +178,7 @@
     }
 }
 
-@media screen and (min-width: 1400px) {
+@media screen and (min-width: $bp-large) {
     .media-content {
         width: $l-main-width;
         grid-template-columns: repeat(3, 1fr);

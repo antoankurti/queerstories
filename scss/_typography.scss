@@ -1,10 +1,12 @@
+@use 'config' as *;
+
 /* Import elements */
 
 @import url("https://fonts.googleapis.com/css2?family=Ibarra+Real+Nova:wght@600&family=Inconsolata:wght@500&family=Jost:wght@300;500;700&family=Lacquer&Major+Mono+Display&family=Permanent+Marker&family=Zilla+Slab+Highlight&display=swap");
 
 :root {
-    font-family: sans-serif !important;
-    color: $secundo;
+    font-family: sans-serif;
+    color: $color-text;
     font-size: calc(1vw + 1vh + 0.5vmin);
 }
 
@@ -12,7 +14,7 @@ h1,
 h2,
 h3,
 a {
-    font-family: "Jost";
+    font-family: $font-main;
     // margin-top: 1.5em;
 }
 a {
@@ -22,7 +24,7 @@ a {
 
 h1 {
     text-transform: uppercase;
-    color: $klein;
+    color: $color-primary;
     font-size: 1.8em;
     font-weight: lighter;
     hyphens: auto;
@@ -47,29 +49,29 @@ p {
 a {
     font-size: 0.8em;
     font-weight: 500;
-    color: $secundo;
+    color: $color-text;
     text-decoration: none;
     transition: color 200ms;
 
     &:hover {
-        color: $klein;
+        color: $color-primary;
         transition: color 200ms;
     }
     &.active {
-        color: $poudre;
+        color: $color-secondary;
     }
 }
 
 footer {
-    color: $secundo;
+    color: $color-text;
 
     a {
         font-size: 1em;
-        font-family: "Inconsolata";
+        font-family: $font-mono;
     }
 
     a:hover {
-        color: $external-link;
+        color: $color-link-external;
     }
 
     p {
@@ -77,7 +79,7 @@ footer {
     }
 }
 
-    @media screen and (min-width:980px) {
+    @media screen and (min-width: $bp-medium) {
         a {
              font-size: 1.8em;
         }

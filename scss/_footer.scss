@@ -1,7 +1,9 @@
+@use 'config' as *;
+
 /* contains only external links */
 
 footer {
-    width: $small-size;;
+    width: $small-size;
     padding: 20px 0;
 
     nav {
@@ -13,7 +15,7 @@ footer {
     }
 }
 
-@media screen and (min-width: 980px) {
+@media screen and (min-width: $bp-medium) {
     footer {
         width: $m-main-width;
         nav {
@@ -22,7 +24,7 @@ footer {
     }
 }
 
-@media screen and (min-width: 1400px) {
+@media screen and (min-width: $bp-large) {
     footer {
         width: $l-main-width;
     }

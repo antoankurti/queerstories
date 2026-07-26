@@ -1,13 +1,9 @@
-
-
-
-
-
+@use 'config' as *;
 
 /* DECORATION */
 
 .hr {
     margin: 10px 0;
     height: 2px;
-    background-image: linear-gradient(90deg, $klein, $poudre);
+    background-image: linear-gradient(90deg, $color-primary, $color-secondary);
 }
