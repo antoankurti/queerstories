@@ -4,27 +4,25 @@
 
 // variables
 
-/* MEDIA SIZES  */
+// MEDIA SIZES
 $l-width: 405px;
 $l-height: 720px;
 
 $m-width: 290px;
 $m-height: math.div($m-width * $l-height, $l-width);
 
-/* SCREEN SIZES  */
-
-/* MAIN DIV SIZE MOSTLY USED FOR */
+// SCREEN SIZES
 
 $full-width: 100vw;
 $full-height: 100vh;
 $small-size: 80vw;
 
-/* 980 px screen  */
+// 980 px screen
 
 $m-main-width: $m-width * 3;
 $l-main-width: $l-width * 3;
 
-/* MIXINS  */
+// MIXINS
 // mm- stands for medium media
 // lm - large media
 
@@ -39,8 +37,8 @@ $l-main-width: $l-width * 3;
 }
 
 // Breakpoints
-$bp-medium: 980px;
-$bp-large: 1400px;
+$bp-medium: 768px;  // tablette / paysage grand téléphone
+$bp-large: 1200px;  // desktop
 
 // Typographie
 $font-main: "Jost";

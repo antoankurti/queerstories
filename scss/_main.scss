@@ -2,7 +2,7 @@
 
 /* CONTAINER */
 .media-content {
-    width: $small-size;
+    width: 100vw; // plein écran sur mobile — les vidéos et photos sont full-bleed
 
     display: flex;
     flex-direction: column;
@@ -10,17 +10,23 @@
     align-items: center;
 
     .text-content {
-        width: $small-size;
+        width: $small-size; // le texte garde ses marges (80vw)
         padding: 3rem 0 3rem 0;
     }
 
     video,
     img {
-        width: $full-width;
+        width: 100%; // 100% du conteneur = 100vw, pas d'overflow
+    }
 
-        .peoples-names-list {
-            padding: 50px 100px;
-        }
+    .peoples-names-list {
+        padding: 50px 100px;
+    }
+
+    video {
+        background: $color-text;
+        aspect-ratio: 9 / 16;
+        display: block;
     }
 
     /* audio {
@@ -30,16 +36,17 @@
         background-image: url(/media/sao_paulo/photo/IMG_7791.jpg);
     } */
 
-    /* PARALAX *** CONTAINS MOSTLY THE NAME OF THE CITY and sometimesother info */
+    /* PARALAX PHOTO — nom de la ville sur image fixe */
     .paralax {
         width: $full-width;
         height: 120vh;
         background-size: cover;
-        // back
         background-position: center;
-        background-attachment: fixed;
+        background-attachment: scroll; // scroll par défaut (iOS ne supporte pas fixed)
 
-        min-height: 10em;
+        @media (hover: hover) and (pointer: fine) {
+            background-attachment: fixed; // parallax uniquement sur desktop avec souris
+        }
 
         display: flex;
         justify-content: center;
@@ -48,9 +55,54 @@
         h1 {
             text-align: center;
             color: $color-bg;
-            font-size: 1.2rem;
-            font-weight: 700;
+            font-size: 2.4rem;
+            font-weight: 500;
             hyphens: auto;
+        }
+    }
+
+    /* PARALAX VIDEO — titre du projet sur vidéo plein écran */
+    .paralax-video {
+        position: relative;
+        width: $full-width;
+        height: 100vh;
+        background: $color-text;
+        clip-path: inset(0 0 0 0); // coupe la vidéo fixed quand on scroll hors de la section
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            object-fit: cover;
+            z-index: 0;
+        }
+
+        .text-overlay {
+            position: relative;
+            z-index: 1;
+            width: 30%;
+            height: 80%;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+        }
+
+        h1 {
+            color: $color-pop;
+            font-family: $font-main;
+            font-weight: 700;
+            line-height: 1;
+            text-align: left;
+            text-transform: none;
+            margin: 0;
+            padding: 0;
+            width: 100%;
         }
     }
 

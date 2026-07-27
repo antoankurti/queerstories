@@ -41,7 +41,7 @@ function markdownToHtml(text) {
     return text.split('\n\n').map(block => {
         block = block.trim();
         if (block === '') return '';
-        if (block.startsWith('<h2>')) return block;
+        if (block.startsWith('<h1>') || block.startsWith('<h2>') || block.startsWith('<h3>')) return block;
         return `<p>${block}</p>`;
     }).join('');
 }
@@ -55,8 +55,15 @@ function styleClass(style) {
 }
 
 async function buildPage() {
-    const response = await fetch(`data/${villeId}.json`);
-    const city = await response.json();
+    const [cityResponse, projectResponse] = await Promise.all([
+        fetch(`data/${villeId}.json`),
+        fetch(`data/project.json`)
+    ]);
+    const city = await cityResponse.json();
+    const project = await projectResponse.json();
+
+    // Titre du projet dans la langue de la ville (fallback: anglais)
+    const projectTitle = project.title[city.lang] || project.title['en'];
 
     // Met à jour le titre de la page
     document.title = `Queerstories — ${city.name}`;
@@ -68,18 +75,28 @@ async function buildPage() {
     for (const item of city.content) {
 
         if (item.type === 'image') {
-            main.innerHTML += `<img src="${city.media}${item.src}" alt="">`;
+            main.insertAdjacentHTML('beforeend', `<img src="${city.media}${item.src}" alt="" loading="lazy">`);
         }
 
         else if (item.type === 'video') {
-            main.innerHTML += `<video src="${city.media}${item.src}" loop></video>`;
+            main.insertAdjacentHTML('beforeend', `<video data-src="${city.media}${item.src}" loop preload="none"></video>`);
         }
 
         else if (item.type === 'parallax') {
-            main.innerHTML += `
+            main.insertAdjacentHTML('beforeend', `
                 <div class="paralax" style="background-image: url('${city.media}${item.src}')">
-                    <h1>${city.name}</h1>
-                </div>`;
+                    <h1>${item.text || city.name}</h1>
+                </div>`);
+        }
+
+        else if (item.type === 'parallax-video') {
+            main.insertAdjacentHTML('beforeend', `
+                <div class="paralax-video">
+                    <video data-src="${city.media}${item.src}" loop playsinline muted preload="none"></video>
+                    <div class="text-overlay">
+                        <h1>${item.text || projectTitle}</h1>
+                    </div>
+                </div>`);
         }
 
         else if (item.type === 'people-list') {
@@ -90,7 +107,7 @@ async function buildPage() {
                 .filter(n => n !== '')
                 .map(n => `<h3>${n}</h3>`)
                 .join('');
-            main.innerHTML += `<div class="peoples-names-list">${noms}</div>`;
+            main.insertAdjacentHTML('beforeend', `<div class="peoples-names-list">${noms}</div>`);
         }
 
         else if (item.type === 'text') {
@@ -98,28 +115,147 @@ async function buildPage() {
             const section = extractSection(markdown, item.id);
             const html = markdownToHtml(section);
             const cssClass = styleClass(item.style);
-            main.innerHTML += `<div class="${cssClass}">${html}</div>`;
+            main.insertAdjacentHTML('beforeend', `<div class="${cssClass}">${html}</div>`);
         }
     }
 
     // Lance le contrôle vidéo après que tout le contenu est chargé
+    // Stocke le ratio de visibilité sur chaque vidéo pour pouvoir les comparer
+    const ratios = new Map();
+
     const observer = new IntersectionObserver((entries) => {
+
+        // 1. Lazy load / unload + mise à jour des ratios
         entries.forEach(entry => {
             const video = entry.target;
             const ratio = entry.intersectionRatio;
-            if (ratio === 0) {
+
+            if (ratio > 0 && video.dataset.src) {
+                // Charge la vidéo au premier passage dans le viewport
+                video.dataset.originalSrc = video.dataset.src;
+                video.src = video.dataset.src;
+                delete video.dataset.src;
+            } else if (ratio === 0 && !video.dataset.src && video.dataset.originalSrc) {
+                // Libère la RAM quand la vidéo est complètement hors écran
                 video.pause();
-                video.volume = 0;
-            } else {
-                video.volume = Math.min(ratio * 2, 1);
-                video.play().catch(() => {});
+                video.src = '';
+                video.load();
+                video.dataset.src = video.dataset.originalSrc;
+            }
+
+            ratios.set(video, ratio);
+        });
+
+        // 2. Trouver la vidéo la plus visible
+        let bestVideo = null;
+        let bestRatio = 0;
+        ratios.forEach((ratio, video) => {
+            if (ratio > bestRatio) {
+                bestRatio = ratio;
+                bestVideo = video;
             }
         });
+
+        // 3. Jouer uniquement la plus visible, mettre les autres en pause
+        ratios.forEach((ratio, video) => {
+            if (video === bestVideo && bestRatio > 0) {
+                video.volume = Math.min(bestRatio * 2, 1);
+                video.play().catch(() => {});
+            } else {
+                video.pause();
+                video.volume = 0;
+            }
+        });
+
     }, { threshold: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0] });
 
+    // Observer principal : uniquement les vidéos normales (pas celles en position: fixed)
     document.querySelectorAll('video').forEach(video => {
-        observer.observe(video);
+        if (!video.closest('.paralax-video')) {
+            observer.observe(video);
+        }
     });
+
+    // Observer séparé pour les sections parallax-video
+    // On surveille la DIV (pas la vidéo) car la vidéo est en position: fixed
+    document.querySelectorAll('.paralax-video').forEach(section => {
+        const pvVideo = section.querySelector('video');
+        if (!pvVideo) return;
+
+        const pvObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    if (pvVideo.dataset.src) {
+                        pvVideo.dataset.originalSrc = pvVideo.dataset.src;
+                        pvVideo.src = pvVideo.dataset.src;
+                        delete pvVideo.dataset.src;
+                    }
+                    pvVideo.play().catch(() => {});
+                } else {
+                    pvVideo.pause();
+                    if (!pvVideo.dataset.src && pvVideo.dataset.originalSrc) {
+                        pvVideo.src = '';
+                        pvVideo.load();
+                        pvVideo.dataset.src = pvVideo.dataset.originalSrc;
+                    }
+                }
+            });
+        });
+        pvObserver.observe(section);
+
+    });
+
+
+document.addEventListener('visibilitychange', () => {
+    document.querySelectorAll('video').forEach(video => {
+        if (video.closest('.paralax-video')) return; // géré par pvObserver
+        if (video.dataset.src) return; // vidéo déchargée, on ne touche pas
+        if (document.hidden) {
+            video.pause();
+        } else {
+            video.play().catch(() => {});
+        }
+    });
+});
+
 }
 
-buildPage();
+// Ajuste la taille du texte pour remplir exactement le conteneur
+function fitText(overlay) {
+    const h1 = overlay.querySelector('h1');
+    if (!h1) return;
+
+    // Mesure la largeur de chaque mot à 100px pour trouver le plus large
+    const words = h1.textContent.trim().split(/\s+/);
+    const span = document.createElement('span');
+    span.style.cssText = 'position:absolute;visibility:hidden;white-space:nowrap;';
+    span.style.fontFamily = getComputedStyle(h1).fontFamily;
+    span.style.fontWeight = getComputedStyle(h1).fontWeight;
+    document.body.appendChild(span);
+
+    let minRatio = Infinity;
+    words.forEach(word => {
+        span.style.fontSize = '100px';
+        span.textContent = word;
+        const ratio = overlay.clientWidth / span.offsetWidth;
+        if (ratio < minRatio) minRatio = ratio;
+    });
+    document.body.removeChild(span);
+
+    // Taille idéale : le mot le plus long remplit exactement la largeur
+    let fontSize = 100 * minRatio;
+    h1.style.fontSize = fontSize + 'px';
+
+    // Si la hauteur déborde quand même, on réduit proportionnellement
+    if (h1.scrollHeight > overlay.clientHeight) {
+        fontSize *= overlay.clientHeight / h1.scrollHeight;
+        h1.style.fontSize = fontSize + 'px';
+    }
+}
+
+buildPage().then(() => {
+    // Attend que les polices soient chargées avant de calculer les tailles
+    document.fonts.ready.then(() => {
+        document.querySelectorAll('.paralax-video .text-overlay').forEach(fitText);
+    });
+});
