@@ -187,7 +187,6 @@ main .container img {
 .media-content {
   width: 100vw;
   display: flex;
-  flex-direction: column;
   flex-flow: column nowrap;
   align-items: center;
 }
@@ -198,42 +197,43 @@ main .container img {
 .media-content video,
 .media-content img {
   width: 100%;
+  display: block;
 }
 .media-content .peoples-names-list {
   padding: 50px 100px;
 }
 .media-content video {
-  background: rgb(20, 22, 26);
   aspect-ratio: 9/16;
   display: block;
+  overflow: hidden;
+  margin-bottom: -1px;
 }
 .media-content {
-  /* audio {
-      width: $full-width;
-      height: $full-height - 40vw;
-      background: $color-secondary;
-      background-image: url(/media/sao_paulo/photo/IMG_7791.jpg);
-  } */
-  /* PARALAX PHOTO — nom de la ville sur image fixe */
+  /* PARALAX PHOTO — image fixe, même principe que parallax-video */
 }
 .media-content .paralax {
+  position: relative;
   width: 100vw;
   height: 120vh;
-  background-size: cover;
-  background-position: center;
-  background-attachment: scroll;
-}
-@media (hover: hover) and (pointer: fine) {
-  .media-content .paralax {
-    background-attachment: fixed;
-  }
-}
-.media-content .paralax {
+  clip-path: inset(0 0 0 0);
   display: flex;
   justify-content: center;
   align-items: center;
 }
+.media-content .paralax .paralax-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 0;
+}
 .media-content .paralax h1 {
+  position: relative;
+  z-index: 1;
   text-align: center;
   color: rgb(250, 250, 250);
   font-size: 2.4rem;
@@ -265,9 +265,9 @@ main .container img {
 .media-content .paralax-video .text-overlay {
   position: relative;
   z-index: 1;
-  width: 30%;
+  width: 55%;
   height: 80%;
-  overflow: hidden;
+  overflow: visible;
   display: flex;
   align-items: center;
 }
@@ -281,6 +281,8 @@ main .container img {
   margin: 0;
   padding: 0;
   width: 100%;
+  hyphens: none;
+  word-break: keep-all;
 }
 .media-content .drama {
   width: 80vw;
@@ -289,14 +291,6 @@ main .container img {
   color: rgb(20, 22, 26);
   text-align: center;
   margin: 5rem 5rem;
-}
-.media-content .drama .story {
-  background-color: #fabcbc;
-}
-.media-content .drama .story p {
-  font-family: "Zilla Slab Highlight";
-  font-size: 0.5em;
-  width: 50vw;
 }
 .media-content {
   /* dramatic phrasis about deaths or murders with a blood effect */
@@ -481,19 +475,47 @@ footer nav {
     width: 1215px;
   }
 }
-/* page scroll bar */
-#scroll-bar {
-  position: fixed !important;
-  top: 0;
-  left: 0;
-  overflow: hidden;
+#pwa-hint {
+  position: fixed;
+  bottom: -120px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90vw;
+  max-width: 400px;
+  background: rgb(20, 22, 26);
+  color: rgb(250, 250, 250);
+  padding: 1rem 1.2rem;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  z-index: 999;
+  transition: bottom 0.4s ease;
+  font-family: "Jost";
+  font-size: 0.85rem;
+  font-weight: 300;
+  line-height: 1.4;
 }
-#scroll-bar #scroll-indicator {
-  top: 0;
-  width: 100vw;
-  height: 0.25em;
-  background: linear-gradient(90deg, #0004ff 20%, #fabcbc 67%);
-  background-size: 300% 100%;
+#pwa-hint p {
+  flex: 1;
+}
+#pwa-hint span {
+  font-size: 1.4rem;
+}
+#pwa-hint button#pwa-hint-close {
+  background: none;
+  border: none;
+  color: rgb(250, 250, 250);
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 0 0.2rem;
+  opacity: 0.6;
+  flex-shrink: 0;
+}
+#pwa-hint button#pwa-hint-close:hover {
+  opacity: 1;
 }
 
-/*# sourceMappingURL=styles.css.map */
+#pwa-hint.visible {
+  bottom: calc(env(safe-area-inset-bottom, 0px) + 1.5rem);
+}

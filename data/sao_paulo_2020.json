@@ -3,12 +3,13 @@
   "name": "Sao Paulo",
   "year": "2020",
   "lang": "pt",
+  "inhabitants": "Paulistanos",
   "media": "media/sao_paulo/2020/",
   "texts": "media/sao_paulo/2020/texts.md",
-  "content": [
-    
+  "content": [    
     
     { "type": "parallax", "src": "photo/IMG_7817.jpg" },
+    
     { "type": "image",    "src": "photo/IMG_7818.jpg" },
     { "type": "image",    "src": "photo/2020-03-10_07.58.56.jpg" },
     { "type": "image",    "src": "photo/IMG_7640.jpg" },
@@ -18,6 +19,8 @@
     { "type": "video",    "src": "video/alessandre_presentation.mp4" },
     { "type": "image",    "src": "photo/000098240018.jpg" },
     { "type": "video",    "src": "video/alessandro_relationship.mp4" },
+
+
     { "type": "image",    "src": "photo/000098240012.jpg" },
     { "type": "video",    "src": "video/alessandro_lgbt-rejected-kids.mp4" },
     { "type": "image",    "src": "photo/IMG_7683.jpg" },

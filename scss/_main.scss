@@ -5,7 +5,6 @@
     width: 100vw; // plein écran sur mobile — les vidéos et photos sont full-bleed
 
     display: flex;
-    flex-direction: column;
     flex-flow: column nowrap;
     align-items: center;
 
@@ -16,7 +15,8 @@
 
     video,
     img {
-        width: 100%; // 100% du conteneur = 100vw, pas d'overflow
+        width: 100%;
+        display: block; // évite l'espace inline sous les images
     }
 
     .peoples-names-list {
@@ -24,35 +24,38 @@
     }
 
     video {
-        background: $color-text;
         aspect-ratio: 9 / 16;
         display: block;
+        overflow: hidden;
+        margin-bottom: -1px; // ferme le subpixel gap causé par le calcul de hauteur fractionnelle
     }
 
-    /* audio {
-        width: $full-width;
-        height: $full-height - 40vw;
-        background: $color-secondary;
-        background-image: url(/media/sao_paulo/photo/IMG_7791.jpg);
-    } */
-
-    /* PARALAX PHOTO — nom de la ville sur image fixe */
+    /* PARALAX PHOTO — image fixe, même principe que parallax-video */
     .paralax {
+        position: relative;
         width: $full-width;
         height: 120vh;
-        background-size: cover;
-        background-position: center;
-        background-attachment: scroll; // scroll par défaut (iOS ne supporte pas fixed)
-
-        @media (hover: hover) and (pointer: fine) {
-            background-attachment: fixed; // parallax uniquement sur desktop avec souris
-        }
+        clip-path: inset(0 0 0 0); // coupe l'image fixed quand on scroll hors de la section
 
         display: flex;
         justify-content: center;
         align-items: center;
 
+        .paralax-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            z-index: 0;
+        }
+
         h1 {
+            position: relative;
+            z-index: 1;
             text-align: center;
             color: $color-bg;
             font-size: 2.4rem;
@@ -86,9 +89,9 @@
         .text-overlay {
             position: relative;
             z-index: 1;
-            width: 30%;
+            width: 55%;
             height: 80%;
-            overflow: hidden;
+            overflow: visible;
             display: flex;
             align-items: center;
         }
@@ -103,6 +106,8 @@
             margin: 0;
             padding: 0;
             width: 100%;
+            hyphens: none;
+            word-break: keep-all;
         }
     }
 
@@ -113,16 +118,6 @@
         color: $color-text;
         text-align: center;
         margin: 5rem 5rem;
-
-        .story {
-            background-color: $color-secondary;
-
-            p {
-                font-family: $font-highlight;
-                font-size: 0.5em;
-                width: 50vw;
-            }
-        }
     }
 
     /* dramatic phrasis about deaths or murders with a blood effect */
@@ -199,7 +194,6 @@
         }
 
         .drama {
-            // display: block;
             @include mm-size;
             font-size: 1rem;
             margin: 0;

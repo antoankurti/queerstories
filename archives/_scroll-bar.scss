@@ -4,9 +4,10 @@
 
 #scroll-bar {
     position: fixed !important;
-    top: 0;
+    top: env(safe-area-inset-top, 0px);
     left: 0;
     overflow: hidden;
+    z-index: 500;
 
     #scroll-indicator {
         top: 0;

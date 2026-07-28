@@ -4,15 +4,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Queer confessions from the 21 century - loading...</title>
+    <title>Loading...</title>
+    <meta name="description" content="">
+    <meta name="author" content="Antoan Kurti">
+
+    <!-- Open Graph — remplis dynamiquement par city.js -->
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="I knew you existed">
+    <meta property="og:title" content="">
+    <meta property="og:description" content="">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:image" content="">
+
+    <!-- PWA -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#14161a">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="IKYE">
+    <link rel="apple-touch-icon" href="media/icons/icon-apple.png">
+
     <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
-    <div id="scroll-bar">
-        <div id="scroll-indicator"></div>
-    </div>
-
     <header>
         <nav>
             <a href="index.html">cities</a>
@@ -36,10 +57,16 @@
         </nav>
     </footer>
 
+    <!-- Hint d'installation pour iOS -->
+    <div id="pwa-hint">
+        <span>⬆</span>
+        <p>Add to your home screen — tap <strong>Share</strong> then <strong>Add to Home Screen</strong></p>
+        <button id="pwa-hint-close">✕</button>
+    </div>
+
     <!-- Scripts -->
-    <script src="js/scroll-bar.js" defer></script>
     <script src="js/city.js" defer></script>
-    
+    <script src="js/pwa.js" defer></script>
 
 </body>
 

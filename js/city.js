@@ -6,6 +6,14 @@ const villeId = params.get('ville');
 // Cache pour éviter de recharger le même fichier texte plusieurs fois
 const textCache = {};
 
+// Débloque le son iOS au premier toucher — invisible, aucune interruption
+document.addEventListener('touchstart', () => {
+    document.querySelectorAll('video').forEach(v => {
+        if (v.closest('.paralax-video')) return;
+        v.muted = false;
+    });
+}, { once: true });
+
 // Charge un fichier texte (avec cache)
 function fetchText(src) {
     if (textCache[src]) return Promise.resolve(textCache[src]);
@@ -65,8 +73,21 @@ async function buildPage() {
     // Titre du projet dans la langue de la ville (fallback: anglais)
     const projectTitle = project.title[city.lang] || project.title['en'];
 
-    // Met à jour le titre de la page
-    document.title = `Queerstories — ${city.name}`;
+    // Met à jour le titre et les meta SEO
+    const pageTitle = `${city.name} — I knew you existed`;
+    const pageDesc = `Queer stories from ${city.name}, ${city.year} — video, photo and text testimonies.`;
+    const pageUrl = `https://VOTRE-DOMAINE.com/city.html?ville=${villeId}`;
+    const pageImage = city.cover ? `https://VOTRE-DOMAINE.com/${city.media}${city.cover}` : `https://VOTRE-DOMAINE.com/media/og-cover.jpg`;
+
+    document.title = pageTitle;
+    document.querySelector('meta[name="description"]').setAttribute('content', pageDesc);
+    document.querySelector('meta[property="og:title"]').setAttribute('content', pageTitle);
+    document.querySelector('meta[property="og:description"]').setAttribute('content', pageDesc);
+    document.querySelector('meta[property="og:url"]').setAttribute('content', pageUrl);
+    document.querySelector('meta[property="og:image"]').setAttribute('content', pageImage);
+    document.querySelector('meta[name="twitter:title"]').setAttribute('content', pageTitle);
+    document.querySelector('meta[name="twitter:description"]').setAttribute('content', pageDesc);
+    document.querySelector('meta[name="twitter:image"]').setAttribute('content', pageImage);
 
     // Récupère le conteneur principal
     const main = document.getElementById('city-content');
@@ -79,12 +100,13 @@ async function buildPage() {
         }
 
         else if (item.type === 'video') {
-            main.insertAdjacentHTML('beforeend', `<video data-src="${city.media}${item.src}" loop preload="none"></video>`);
+            main.insertAdjacentHTML('beforeend', `<video data-src="${city.media}${item.src}" loop playsinline muted preload="metadata" disablepictureinpicture></video>`);
         }
 
         else if (item.type === 'parallax') {
             main.insertAdjacentHTML('beforeend', `
-                <div class="paralax" style="background-image: url('${city.media}${item.src}')">
+                <div class="paralax">
+                    <div class="paralax-bg" style="background-image: url('${city.media}${item.src}')"></div>
                     <h1>${item.text || city.name}</h1>
                 </div>`);
         }
@@ -92,7 +114,7 @@ async function buildPage() {
         else if (item.type === 'parallax-video') {
             main.insertAdjacentHTML('beforeend', `
                 <div class="paralax-video">
-                    <video data-src="${city.media}${item.src}" loop playsinline muted preload="none"></video>
+                    <video data-src="${city.media}${item.src}" loop playsinline muted preload="none" disablepictureinpicture></video>
                     <div class="text-overlay">
                         <h1>${item.text || projectTitle}</h1>
                     </div>
@@ -205,19 +227,17 @@ async function buildPage() {
 
     });
 
-
-document.addEventListener('visibilitychange', () => {
-    document.querySelectorAll('video').forEach(video => {
-        if (video.closest('.paralax-video')) return; // géré par pvObserver
-        if (video.dataset.src) return; // vidéo déchargée, on ne touche pas
-        if (document.hidden) {
-            video.pause();
-        } else {
-            video.play().catch(() => {});
-        }
+    document.addEventListener('visibilitychange', () => {
+        document.querySelectorAll('video').forEach(video => {
+            if (video.closest('.paralax-video')) return; // géré par pvObserver
+            if (video.dataset.src) return; // vidéo déchargée, on ne touche pas
+            if (document.hidden) {
+                video.pause();
+            } else {
+                video.play().catch(() => {});
+            }
+        });
     });
-});
-
 }
 
 // Ajuste la taille du texte pour remplir exactement le conteneur
@@ -254,7 +274,6 @@ function fitText(overlay) {
 }
 
 buildPage().then(() => {
-    // Attend que les polices soient chargées avant de calculer les tailles
     document.fonts.ready.then(() => {
         document.querySelectorAll('.paralax-video .text-overlay').forEach(fitText);
     });
