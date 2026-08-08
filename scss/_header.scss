@@ -10,13 +10,15 @@ header {
 
     nav {
         display: flex;
-        flex-flow: column;
-        align-items: center;
+        flex-flow: row wrap;
+        justify-content: space-between;
         order: 1;
+
+        a {
+            font-size: 1rem;
+        }
     }
-    h1 {
-        order: 2;
-    }
+
 }
 
 /* Pour telephone paysage

@@ -1,26 +1,15 @@
 @use 'config' as *;
 
-/* contains only external links */
-
 footer {
     width: $small-size;
     padding: 20px 0;
-
-    nav {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: space-between;
-        padding-top: 10px;
-    }
+    margin-top: auto;
+    color: $color-primary;
 }
 
 @media screen and (min-width: $bp-medium) {
     footer {
         width: $m-main-width;
-        nav {
-            flex-direction: row;
-        }
     }
 }
 

@@ -61,6 +61,8 @@
             font-size: 2.4rem;
             font-weight: 500;
             hyphens: auto;
+            background: none;
+            -webkit-text-fill-color: $color-bg;
         }
     }
 
@@ -108,6 +110,8 @@
             width: 100%;
             hyphens: none;
             word-break: keep-all;
+            background: none;
+            -webkit-text-fill-color: $color-pop;
         }
     }
 

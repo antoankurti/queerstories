@@ -1,6 +1,18 @@
 # TODO — queerstories
 
+## Pages / Structure
+- [ ] Revoir le layout de `index.html` — page pas propre visuellement (grille, espacement, typographie)
+
+- [ ] Utiliser le contenu de `archives/about.html` pour rédiger le texte à destination des participants (questions, règles, thèmes) — à intégrer dans `participate.html` ou en document séparé envoyé aux participants
+- [ ] Ajouter une mention "Currently open : [ville, mois année]" en haut de `participate.html` + champ "ville/session" dans le formulaire Airtable
+- [ ] Ajouter une section "With the support of" en bas de `project.html` pour les partenaires et subsidiaires
+- [ ] Travailler le contenu de `exhibition.html` + mettre à jour le `<title>` (encore "Art Residency")
+- [ ] Travailler le contenu de `contact.html` + mettre à jour le `<title>` (encore "Contact me")
+
 ## Contenu
+- [ ] Ajouter une clé `"contributors"` dans chaque JSON de ville (ex: `sao_paulo_2020.json`) pour créditer les personnes impliquées par ville — affiché dans le footer immersif de `city.html` (remplacer le Lorem Ipsum du div texte dédié)
+
+
 - [ ] Ajouter un champ `cover` dans chaque JSON de ville (photo de couverture pour les partages SEO/réseaux sociaux)
 - [ ] Ajouter des témoignages audio (pour les personnes qui ne veulent pas se montrer à l'image)
 - [ ] Compresser toutes les vidéos avec ffmpeg (quand tout le contenu est prêt)

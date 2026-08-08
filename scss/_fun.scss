@@ -3,7 +3,9 @@
 /* DECORATION */
 
 .hr {
-    margin: 10px 0;
-    height: 2px;
-    background-image: linear-gradient(90deg, $color-primary, $color-secondary);
+    margin: 15px 0 10px;
+    height: 1px;
+    background-image: linear-gradient(90deg, $color-primary, $color-secondary 70%);
+    width: 100vw;
+    margin-left: calc((#{$small-size} - 100vw) / 2);
 }

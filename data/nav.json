@@ -1,0 +1,11 @@
+{
+    "copyright": "© I knew you existed",
+    "header" :
+    [ 
+        { "label" : "cities", "href" : "index.html"},
+        { "label" : "the project", "href" : "project.html"},
+        { "label" : "participate", "href" : "participate.html"},
+        {"label" : "exhibition", "href" : "exhibition.html"},
+        {"label" : "contact", "href" : "contact.html"}
+    ]
+}

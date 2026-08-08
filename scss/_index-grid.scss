@@ -1,10 +1,21 @@
 @use 'config' as *;
 
-/* INDEX */
+/* INDEX — page d'accueil */
 
-main {
-
+.index-page {
     $vignette-size: calc((100vw) / 3.8);
+
+    article {
+        width: $small-size; // h1 et textes avec marges
+
+        h1 {
+            font-size: 22vw;
+            line-height: 0.9;
+            font-weight: 200;
+            hyphens: none;
+            margin-top: 0.5rem;
+        }
+    }
 
     .container {
         display: grid;
@@ -21,6 +32,12 @@ main {
             border-radius: 0.15rem;
             opacity: 0.7;
             transition: 0.5s ease;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
         }
         .image:hover {
             opacity: 1;
@@ -32,16 +49,11 @@ main {
             bottom: 0.2rem;
             font-family: $font-main;
             font-size: 0.8rem;
-            font-weight: 600;
+            font-weight: 400;
             padding: unset;
             margin: unset;
             color: $color-bg;
             text-shadow: 0.2rem 0.1rem 0.2rem $color-primary;
-        }
-        img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
         }
     }
 }

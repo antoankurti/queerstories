@@ -32,15 +32,14 @@
     <link rel="apple-touch-icon" href="media/icons/icon-apple.png">
 
     <link rel="stylesheet" href="css/styles.css">
+
+    <script src="js/nav.js" defer></script>
 </head>
 
 <body>
     <header>
         <nav>
-            <a class="active" href="index.html">cities</a>
-            <a href="about.html">about</a>
-            <a href="participate.html">participate</a>
-            <!-- <a href="contact.html">contact</a> -->
+            <!-- liens injectés par js/nav.js — données : data/nav.json -->
         </nav>
 
         <!--
@@ -55,9 +54,10 @@
 
     </header>
 
-    <main class="media-content">
+    <main class="index-page">
     <article>
         <h1>I knew you existed</h1>
+        <p>Every city has a pulse. We only listen to the ones that leave no mark on any map.</p>
 
         <!-- Grille des villes — générée dynamiquement depuis data/cities.json par js/index.js -->
 
@@ -66,20 +66,8 @@
     </article>
 </main>
 
-    <footer>
-        <div class="hr"></div>
-
-        <p> &copy; 2020 - Antoan Kurti</p>
-
-        <div class="hr"></div>
-
-        <nav>
-            <a href="https://www.antoankurti.com">antoankurti.com</a>
-            <a href="https://www.instagram.com/antoankurti">instagram</a>
-            <a href="mailto:hello@antoankurti.com">email</a>
-            <a href="tel:+32498352753">telephone</a>
-        </nav>
-    </footer>
+    <!-- hr + copyright injectés par js/nav.js — données : data/nav.json -->
+    <footer></footer>
 
     <!-- Hint d'installation pour iOS -->
     <div id="pwa-hint">
