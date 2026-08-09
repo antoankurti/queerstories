@@ -9,7 +9,7 @@ const textCache = {};
 // Débloque le son iOS au premier toucher — invisible, aucune interruption
 document.addEventListener('touchstart', () => {
     document.querySelectorAll('video').forEach(v => {
-        if (v.closest('.paralax-video')) return;
+        if (v.closest('.parallax-video')) return;
         v.muted = false;
     });
 }, { once: true });
@@ -96,7 +96,8 @@ async function buildPage() {
     for (const item of city.content) {
 
         if (item.type === 'image') {
-            main.insertAdjacentHTML('beforeend', `<img src="${city.media}${item.src}" alt="" loading="lazy">`);
+            const spanClass = item.span ? ` grid-span-${item.span}` : '';
+            main.insertAdjacentHTML('beforeend', `<img src="${city.media}${item.src}" alt="" loading="lazy" class="${spanClass.trim()}">`);
         }
 
         else if (item.type === 'video') {
@@ -105,15 +106,15 @@ async function buildPage() {
 
         else if (item.type === 'parallax') {
             main.insertAdjacentHTML('beforeend', `
-                <div class="paralax">
-                    <div class="paralax-bg" style="background-image: url('${city.media}${item.src}')"></div>
+                <div class="parallax">
+                    <div class="parallax-bg" style="background-image: url('${city.media}${item.src}')"></div>
                     <h1>${item.text || city.name}</h1>
                 </div>`);
         }
 
         else if (item.type === 'parallax-video') {
             main.insertAdjacentHTML('beforeend', `
-                <div class="paralax-video">
+                <div class="parallax-video">
                     <video data-src="${city.media}${item.src}" loop playsinline muted preload="none" disablepictureinpicture></video>
                     <div class="text-overlay">
                         <h1>${item.text || projectTitle}</h1>
@@ -129,7 +130,7 @@ async function buildPage() {
                 .filter(n => n !== '')
                 .map(n => `<h3>${n}</h3>`)
                 .join('');
-            main.insertAdjacentHTML('beforeend', `<div class="peoples-names-list">${noms}</div>`);
+            main.insertAdjacentHTML('beforeend', `<div class="people-list">${noms}</div>`);
         }
 
         else if (item.type === 'text') {
@@ -193,14 +194,14 @@ async function buildPage() {
 
     // Observer principal : uniquement les vidéos normales (pas celles en position: fixed)
     document.querySelectorAll('video').forEach(video => {
-        if (!video.closest('.paralax-video')) {
+        if (!video.closest('.parallax-video')) {
             observer.observe(video);
         }
     });
 
     // Observer séparé pour les sections parallax-video
     // On surveille la DIV (pas la vidéo) car la vidéo est en position: fixed
-    document.querySelectorAll('.paralax-video').forEach(section => {
+    document.querySelectorAll('.parallax-video').forEach(section => {
         const pvVideo = section.querySelector('video');
         if (!pvVideo) return;
 
@@ -229,7 +230,7 @@ async function buildPage() {
 
     document.addEventListener('visibilitychange', () => {
         document.querySelectorAll('video').forEach(video => {
-            if (video.closest('.paralax-video')) return; // géré par pvObserver
+            if (video.closest('.parallax-video')) return; // géré par pvObserver
             if (video.dataset.src) return; // vidéo déchargée, on ne touche pas
             if (document.hidden) {
                 video.pause();
@@ -273,8 +274,42 @@ function fitText(overlay) {
     }
 }
 
+// Parallaxe desktop : translate la vidéo/photo à vitesse réduite pendant le scroll
+// Sur mobile, c'est géré en CSS (position: fixed + clip-path) — on ne touche à rien.
+function initDesktopParallax() {
+    if (window.innerWidth < 768) return;
+
+    const containers = document.querySelectorAll('.parallax-video, .parallax');
+    if (!containers.length) return;
+
+    function tick() {
+        const vh = window.innerHeight;
+        containers.forEach(container => {
+            const rect = container.getBoundingClientRect();
+
+            // progress : 0 = élément en bas du viewport, 1 = élément sorti en haut
+            const total = vh + rect.height;
+            const progress = 1 - (rect.top + rect.height) / total;
+
+            // décalage ±60px — reste dans les ±20% d'espace supplémentaire du CSS
+            const shift = (progress - 0.5) * 120;
+
+            const inner = container.classList.contains('parallax-video')
+                ? container.querySelector('video')
+                : container.querySelector('.parallax-bg');
+
+            if (inner) inner.style.transform = `translateY(${shift}px)`;
+        });
+    }
+
+    window.addEventListener('scroll', tick, { passive: true });
+    tick(); // position initiale
+}
+
 buildPage().then(() => {
     document.fonts.ready.then(() => {
-        document.querySelectorAll('.paralax-video .text-overlay').forEach(fitText);
+        document.querySelectorAll('.parallax-video .text-overlay').forEach(fitText);
     });
+    initDesktopParallax();
 });
+

@@ -2,29 +2,21 @@
 
 /* CONTACT PAGE */
 
-form {
-    // background-color: $color-primary;
-    /* :focus-within {
-        background-color: unset;
-    } */
-}
-
 label {
     display: block;
-    margin: 1em;
-    color: $color-primary;
-    margin-left:0;  
+    margin: 1em 1em 1em 0;
+    color: var(--color-primary);
 }
 
 input,
 textarea {
     display: block;
-    border: solid 2px $color-primary;
-    background-color: $color-bg;
+    border: solid 2px var(--color-primary);
+    background-color: var(--color-bg);
     width: 100%;
     font-weight: 300;
     font-size: 1rem;
-    color: $color-primary;
+    color: var(--color-primary);
     padding: 0.75em 0.5em;
     margin-top: 0.3em;
 }
@@ -40,6 +32,6 @@ textarea {
     margin-left: auto;
     width: auto;
     padding: 0.5em 1.5em;
-    color: $color-primary;
+    color: var(--color-primary);
     font-size: 1rem;
 }

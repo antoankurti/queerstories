@@ -42,16 +42,6 @@
             <!-- liens injectés par js/nav.js — données : data/nav.json -->
         </nav>
 
-        <!--
-        <div id="openMenu">
-            <svg class="bi bi-caret-down-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
-                xmlns="http://www.w3.org/2000/svg">
-                <path
-                    d="M7.247 11.14L2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z" />
-            </svg>
-        </div>
-        -->
-
     </header>
 
     <main class="index-page">
@@ -62,18 +52,31 @@
         <!-- Grille des villes — générée dynamiquement depuis data/cities.json par js/index.js -->
 
         <div class="container" id="cities-grid"></div>
-        <p>More confessions to be coming soon.</p>
+        <p>This is an ongoing work. Other cities knew you existed.</p>
     </article>
 </main>
 
     <!-- hr + copyright injectés par js/nav.js — données : data/nav.json -->
     <footer></footer>
 
+    <!-- Message desktop — QR code pour installer sur téléphone -->
+    <div id="desktop-hint">
+        <div class="pwa-frame">
+            <div id="desktop-hint-qr"></div>
+            <p class="pwa-title">Open on your phone.</p>
+            <p class="pwa-subtitle">Scan to install — made for mobile.</p>
+            <button id="desktop-hint-close">✕</button>
+        </div>
+    </div>
+
     <!-- Hint d'installation pour iOS -->
     <div id="pwa-hint">
-        <span>⬆</span>
-        <p>Add to your home screen — tap <strong>Share</strong> then <strong>Add to Home Screen</strong></p>
-        <button id="pwa-hint-close">✕</button>
+        <div class="pwa-frame">
+            <p class="pwa-title">This website is best viewed as an app.</p>
+            <p class="pwa-subtitle">Tap the button below, then choose "Add to Home Screen".</p>
+            <button id="pwa-share">Add to screen</button>
+            <button id="pwa-hint-close">✕</button>
+        </div>
     </div>
 
     <!-- scripts -->

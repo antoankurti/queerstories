@@ -4,22 +4,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The project — I knew you existed</title>
-    <meta name="description" content="A multimedia documentary of LGBTQ+ lives across cities and decades — video, photo, audio and text testimonies.">
+    <title>On the work — I knew you existed</title>
+    <meta name="description" content="A multimedia documentary of LGBTQIA+ lives across cities and decades — video, photo, audio and text testimonies.">
     <meta name="author" content="Antoan Kurti">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="I knew you existed">
-    <meta property="og:title" content="The project — I knew you existed">
-    <meta property="og:description" content="A multimedia documentary of LGBTQ+ lives across cities and decades.">
+    <meta property="og:title" content="The work — I knew you existed">
+    <meta property="og:description" content="A multimedia documentary of LGBTQIA+ lives across cities and decades.">
     <meta property="og:url" content="https://VOTRE-DOMAINE.com/project.html">
     <meta property="og:image" content="https://VOTRE-DOMAINE.com/media/og-cover.jpg">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="The project — I knew you existed">
-    <meta name="twitter:description" content="A multimedia documentary of LGBTQ+ lives across cities and decades.">
+    <meta name="twitter:title" content="The work — I knew you existed">
+    <meta name="twitter:description" content="A multimedia documentary of LGBTQIA+ lives across cities and decades.">
     <meta name="twitter:image" content="https://VOTRE-DOMAINE.com/media/og-cover.jpg">
 
     <!-- PWA -->
@@ -42,7 +42,10 @@
     </header>
 
     <main class="written-content">
-        <article>
+
+        <!-- ── MANIFESTE ─────────────────────────────────────────────── -->
+        <article class="col">
+            <h1>On the work</h1>
 
             <p>Each city makes its own promises to its queers. Some deliver. Most do not, or not entirely, or not for everyone.</p>
 
@@ -53,33 +56,71 @@
             <p>Yet the project is also a polyphony. Across cities and continents, individual experiences echo one another: the same fears spoken in different languages, the same desires described from different streets, the same turning points lived in different decades. From these overlapping fragments, a collective story becomes audible, one that does not erase the local but makes the universal visible.</p>
 
             <p><em>I knew you existed</em> is an open, itinerant work. It began in São Paulo in 2020. It will continue wherever there is a community willing to speak, and a city worth reading.</p>
-
         </article>
 
-        <section>
-            <!-- With the support of — partenaires et subsidiaires à ajouter ici -->
-        </section>
+        <!-- ── HOW ───────────────────────────────────────────────────── -->
+        <article class="col">
+            <h2>How</h2>
 
+            <p>Each testimony begins with a conversation, most often passed from one person to the next: someone who participated, recommending the project to someone they trusted. Word of mouth is the primary method. Dating apps and queer associations have also opened doors, and some conversations continued at home, when an invitation was extended. These were often the most candid.</p>
+
+            <p>The format is chosen by the person speaking: video, recorded voice, photograph, written text sent days later. There is no hierarchy among these. Each carries what another cannot. A voice recording preserves what a transcript would smooth over: hesitation, silence, laughter in the wrong place. Text, written in the days following a meeting, sometimes captures what the moment itself did not allow.</p>
+
+            <p>The places, too, are chosen by those who know them. A cruising spot, a bar that no longer exists, a park bench, a neighbourhood that changed. Participants show the city as they inhabit it, not as it presents itself. The architectural documentation that runs alongside follows the same logic: the city as a lived and remembered space, not as a catalogue of landmarks. The two readings are meant to coexist.</p>
+        </article>
+
+        <!-- ── WITH ─────────────────────────────────────────────────── -->
+        <article>
+            <h2>With</h2>
+
+            <!-- À remplir : associations et organisations participantes -->
+            <p>[ associations à ajouter ]</p>
+        </article>
+
+        <!-- ── COLLABORATE ───────────────────────────────────────────── -->
+        <article class="col">
+            <h2>Collaborate</h2>
+
+            <p><em>I knew you existed</em> exists to connect, across cities, continents, and decades, experiences that placed alongside one another begin to sound like a single story. Each new city adds a layer to that story, and a city already on the map can always receive another.</p>
+
+            <p>What makes this possible is both access and material support: access to people willing to speak and spaces willing to open, and residencies, travel grants, or co-productions that make it possible to go where the project needs to go.</p>
+
+            <p>If you have a community willing to speak and a city worth reading, or simply a group of friends who want to put their lives on the map, the project is listening.</p>
+        </article>
+
+        <!-- ── CONTACT ───────────────────────────────────────────────── -->
         <section class="external-links">
-            <a href="https://www.antoankurti.com">antoankurti.com</a>
+            <p class="contact-lead">—</p>
             <a href="https://www.instagram.com/antoankurti">instagram</a>
             <a href="mailto:hello@antoankurti.com">email</a>
-            <a href="tel:+32498352753">telephone</a>
         </section>
+
     </main>
 
-    <!-- hr + copyright injectés par js/nav.js — données : data/nav.json -->
+    <!-- hr + copyright injectés par js/nav.js -->
     <footer></footer>
 
-    <script src="js/pwa.js" defer></script>
-
-    <!-- Hint d'installation pour iOS -->
-    <div id="pwa-hint">
-        <span>⬆</span>
-        <p>Add to your home screen — tap <strong>Share</strong> then <strong>Add to Home Screen</strong></p>
-        <button id="pwa-hint-close">✕</button>
+    <!-- QR code desktop -->
+    <div id="desktop-hint">
+        <div class="pwa-frame">
+            <div id="desktop-hint-qr"></div>
+            <p class="pwa-title">Open on your phone.</p>
+            <p class="pwa-subtitle">Scan to install — made for mobile.</p>
+            <button id="desktop-hint-close">✕</button>
+        </div>
     </div>
 
+    <!-- Hint iOS -->
+    <div id="pwa-hint">
+        <div class="pwa-frame">
+            <p class="pwa-title">This website is best viewed as an app.</p>
+            <p class="pwa-subtitle">Tap the button below, then choose "Add to Home Screen".</p>
+            <button id="pwa-share">Add to screen</button>
+            <button id="pwa-hint-close">✕</button>
+        </div>
+    </div>
+
+    <script src="js/pwa.js" defer></script>
 </body>
 
 </html>

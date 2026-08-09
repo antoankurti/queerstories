@@ -6,25 +6,18 @@ header {
     display: flex;
     flex-direction: column;
     padding-bottom: 1rem;
-    padding-top: 2rem;
+    padding-top: 1rem;
 
     nav {
         display: flex;
         flex-flow: row wrap;
         justify-content: space-between;
         order: 1;
-
-        a {
-            font-size: 1rem;
-        }
     }
 
 }
 
-/* Pour telephone paysage
-@media screen and (min-width: 320px) and (max-width: 640px) and (orientation: landscape) { */
-
-@media screen and (min-width: $bp-medium){
+@media screen and (min-width: $bp-medium) {
     header {
         width: $m-main-width;
 

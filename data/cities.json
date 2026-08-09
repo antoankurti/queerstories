@@ -1,7 +1,3 @@
 [
-  { "id": "sao_paulo_2020", "name": "Sao Paulo", "year": "2020", "cover": "media/sao_paulo/2020/photo/000098240018.jpg" },
-  { "id": "sao_paulo_2020", "name": "Berlin", "year": "2021", "cover": "media/sao_paulo/2020/photo/000098240018.jpg" },
-  { "id": "sao_paulo_2020", "name": "Tbilisi", "year": "2022", "cover": "media/sao_paulo/2020/photo/000098240018.jpg" },
-  { "id": "sao_paulo_2020", "name": "Tirana", "year": "2023", "cover": "media/sao_paulo/2020/photo/000098240018.jpg" },
-  { "id": "sao_paulo_2020", "name": "Tunis", "year": "2024", "cover": "media/sao_paulo/2020/photo/000098240018.jpg" }
+  { "id": "sao_paulo_2020", "name": "Sao Paulo", "year": "2020", "cover": "media/sao_paulo/2020/photo/000098240018.jpg" }
 ]

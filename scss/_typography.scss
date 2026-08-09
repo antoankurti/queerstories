@@ -6,16 +6,16 @@
 
 :root {
     font-family: sans-serif;
-    color: $color-text;
-    font-size: calc(1vw + 1vh + 0.5vmin);
+    color: var(--color-text);
+    font-size: clamp(0.875rem, 2.5vw, 1.25rem);
 }
+
 
 h1,
 h2,
 h3,
 a {
     font-family: $font-main;
-    // margin-top: 1.5em;
 }
 a {
     padding-top: 10px;
@@ -28,7 +28,7 @@ h1 {
     font-weight: 300;
     hyphens: auto;
     margin-top: 1em;
-    background: linear-gradient(45deg, $color-primary, $color-secondary 60%);
+    background: linear-gradient(45deg, var(--color-primary), var(--color-secondary) 60%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -40,27 +40,26 @@ h2 {
 }
 
 p {
-    // background-color: yellow;
     font-weight: lighter;
     line-height: 1.6em;
     margin: 1rem 0 0.5rem 0;
 }
+
 
 /* LINKS */
 
 a {
     font-size: 0.8em;
     font-weight: 500;
-    color: $color-text;
+    color: var(--color-text);
     text-decoration: none;
     transition: color 200ms;
 
     &:hover {
-        color: $color-primary;
-        transition: color 200ms;
+        color: var(--color-primary);
     }
     &.active {
-        color: $color-secondary;
+        color: var(--color-secondary);
     }
 }
 
@@ -70,18 +69,25 @@ a {
     align-items: flex-start;
     padding-top: 10px;
 
+    .contact-lead {
+        color: var(--color-text);
+        margin-bottom: 0.5rem;
+        font-weight: 300;
+    }
+
     a {
         font-size: 1em;
         font-family: $font-mono;
+        color: var(--color-link-external); // vert — DA liens externes ≠ liens internes
     }
 
     a:hover {
-        color: $color-link-external;
+        opacity: 0.7;
     }
 }
 
 footer {
-    color: $color-text;
+    color: var(--color-text);
 
     a {
         font-size: 1em;
@@ -89,7 +95,7 @@ footer {
     }
 
     a:hover {
-        color: $color-link-external;
+        color: var(--color-link-external);
     }
 
     p {
@@ -97,14 +103,24 @@ footer {
     }
 }
 
-    @media screen and (min-width: $bp-medium) {
-        a {
-             font-size: 1.8em;
-        }
-
-        footer {
-            a {
-                font-size: 0.6em;
-            }
-        }
+@media screen and (min-width: $bp-medium) {
+    :root {
+        font-size: 14px; // desktop : cohérent avec l'ancienne valeur forcée sur la grille
     }
+
+    h1 {
+        font-size: 2.5rem; // restaure une taille lisible sur les pages écrites (project, participate…)
+    }
+
+    h2 {
+        font-size: 1.6rem;
+    }
+
+    a {
+        font-size: 1.8em;
+    }
+
+    footer a {
+        font-size: 0.6em;
+    }
+}

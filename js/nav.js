@@ -2,7 +2,7 @@ fetch('data/nav.json')
     .then(response => response.json())
     .then(menu => {
         const headerNav = document.querySelector('header nav');
-        menu.header.forEach(lien => {
+        menu.header.filter(lien => lien.visible !== false).forEach(lien => {
             const a = document.createElement('a');
             a.href = lien.href;
             a.textContent = lien.label;
@@ -21,4 +21,7 @@ fetch('data/nav.json')
             footer.appendChild(hr);
             footer.appendChild(p);
         }
+    })
+    .catch(() => {
+        console.error('Impossible de charger data/nav.json');
     });

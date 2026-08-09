@@ -3,24 +3,18 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Loading...</title>
-    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map — I knew you existed</title>
+    <meta name="description" content="A map of queer stories from cities around the world.">
     <meta name="author" content="Antoan Kurti">
 
-    <!-- Open Graph — remplis dynamiquement par city.js -->
-    <meta property="og:type" content="article">
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
     <meta property="og:site_name" content="I knew you existed">
-    <meta property="og:title" content="">
-    <meta property="og:description" content="">
-    <meta property="og:url" content="">
-    <meta property="og:image" content="">
-
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="">
-    <meta name="twitter:description" content="">
-    <meta name="twitter:image" content="">
+    <meta property="og:title" content="Map — I knew you existed">
+    <meta property="og:description" content="A map of queer stories from cities around the world.">
+    <meta property="og:url" content="https://VOTRE-DOMAINE.com/map.html">
+    <meta property="og:image" content="https://VOTRE-DOMAINE.com/media/og-cover.jpg">
 
     <!-- PWA -->
     <link rel="manifest" href="manifest.json">
@@ -31,21 +25,21 @@
     <link rel="apple-touch-icon" href="media/icons/icon-apple.png">
 
     <link rel="stylesheet" href="css/styles.css">
+    <script src="js/nav.js" defer></script>
 </head>
 
-<body class="city-page">
-
-    <!-- Header identique à l'index — nav.js injecte les liens, CSS masque tout sauf "cities" -->
+<body>
     <header>
         <nav></nav>
     </header>
 
-    <!-- Contenu de la ville — généré dynamiquement depuis data/{ville}.json par js/city.js -->
-    <main class="media-content" id="city-content"></main>
+    <main class="written-content">
+        <!-- carte à construire -->
+    </main>
 
-    <footer style="display:none"></footer>
+    <footer></footer>
 
-    <!-- Message desktop — QR code pour installer sur téléphone -->
+    <!-- QR code desktop -->
     <div id="desktop-hint">
         <div class="pwa-frame">
             <div id="desktop-hint-qr"></div>
@@ -55,7 +49,7 @@
         </div>
     </div>
 
-    <!-- Hint d'installation pour iOS -->
+    <!-- Hint iOS -->
     <div id="pwa-hint">
         <div class="pwa-frame">
             <p class="pwa-title">This website is best viewed as an app.</p>
@@ -65,12 +59,7 @@
         </div>
     </div>
 
-
-    <!-- Scripts -->
-    <script src="js/nav.js" defer></script>
-    <script src="js/city.js" defer></script>
     <script src="js/pwa.js" defer></script>
-
 </body>
 
 </html>

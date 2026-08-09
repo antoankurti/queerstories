@@ -1,0 +1,39 @@
+@use 'config' as *;
+
+// Sur city.html (body.city-page) :
+// Le header est le même qu'à l'index — nav.js injecte tous les liens.
+// CSS masque tout sauf le premier lien ("cities") et le stylise en bouton retour.
+
+body.city-page {
+
+    // Mobile : retour = swipe — on cache le header
+    header {
+        display: none;
+    }
+
+    @media screen and (min-width: $bp-medium) {
+        header {
+            display: flex;
+            position: fixed;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 100;
+
+            // Masque tous les liens sauf "cities" (premier lien)
+            nav a:not(:first-child) {
+                display: none;
+            }
+
+            // Stylise "cities" en bouton retour
+            nav a:first-child {
+                color: white;
+                transition: color 200ms;
+
+                &:hover {
+                    color: var(--color-primary);
+                }
+            }
+        }
+    }
+}

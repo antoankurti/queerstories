@@ -39,13 +39,13 @@
     { "type": "parallax-video", "src": "video/foot.mp4" },
 
     { "type": "image",    "src": "photo/2020-03-12_16.33.49.jpg" },
-    { "type": "image",    "src": "photo/000098240021.jpg" },
+    { "type": "image",    "src": "photo/000098240021.jpg", "span": 2 },
 
     { "type": "text",     "id": "text_03", "style": "highlight" },
 
-    { "type": "image",    "src": "photo/2020-03-19_21.23.23.jpg" },
+    { "type": "image",    "src": "photo/2020-03-19_21.23.23.jpg", "span": 2 },
     { "type": "video",    "src": "video/fundacao_maria_luisa.mp4" },
-    { "type": "image",    "src": "photo/IMG_7530.jpg" },
+    { "type": "image",    "src": "photo/IMG_7530.jpg", "span": 2 },
     { "type": "video",    "src": "video/trans_twerk.mp4" },
     { "type": "image",    "src": "photo/2020-03-20_15.05.28.jpg" },
 
@@ -54,7 +54,7 @@
     { "type": "image",    "src": "photo/IMG_7791.jpg" },
     { "type": "video",    "src": "video/parc.mp4" },
     { "type": "image",    "src": "photo/IMG_7688.jpg" },
-    { "type": "image",    "src": "photo/2020-03-21_12.52.12.jpg" },
+    { "type": "image",    "src": "photo/2020-03-21_12.52.12.jpg", "span": 2 },
 
     { "type": "image",    "src": "photo/IMG_7704.jpg" },
     { "type": "video",    "src": "video/foot2.mp4" },

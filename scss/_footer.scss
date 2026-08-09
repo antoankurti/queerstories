@@ -4,7 +4,7 @@ footer {
     width: $small-size;
     padding: 20px 0;
     margin-top: auto;
-    color: $color-primary;
+    color: var(--color-primary);
 }
 
 @media screen and (min-width: $bp-medium) {

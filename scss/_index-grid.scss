@@ -3,8 +3,6 @@
 /* INDEX — page d'accueil */
 
 .index-page {
-    $vignette-size: calc((100vw) / 3.8);
-
     article {
         width: $small-size; // h1 et textes avec marges
 
@@ -18,14 +16,15 @@
     }
 
     .container {
+        width: $small-size;
         display: grid;
         gap: 0.2rem;
-        grid-template-columns: repeat(3, $vignette-size);
+        grid-template-columns: repeat(3, 1fr);
 
         .image {
             position: relative;
-            width: $vignette-size;
-            height: $vignette-size;
+            width: 100%;
+            aspect-ratio: 1 / 1;
             overflow: hidden;
             padding: 0;
             margin: 0;
@@ -52,8 +51,34 @@
             font-weight: 400;
             padding: unset;
             margin: unset;
-            color: $color-bg;
-            text-shadow: 0.2rem 0.1rem 0.2rem $color-primary;
+            color: var(--color-bg);
+            text-shadow: 0.2rem 0.1rem 0.2rem var(--color-primary);
+        }
+    }
+}
+
+@media screen and (min-width: $bp-medium) {
+    .index-page {
+        article {
+            width: $m-main-width;
+            h1 { font-size: 14.5vw; } // aligne sur bp-large — 22vw trop grand sur desktop
+        }
+        .container {
+            width: $m-main-width;
+        }
+    }
+}
+
+@media screen and (min-width: $bp-large) {
+    .index-page {
+        article {
+            width: $l-main-width;
+        }
+        .container {
+            width: $l-main-width;
+        }
+        article h1 {
+            font-size: 14.5vw;
         }
     }
 }
