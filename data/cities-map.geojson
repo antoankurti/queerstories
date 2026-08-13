@@ -1,0 +1,56 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -46.65717777868016,
+          -23.56211919370975
+        ]
+      },
+      "properties": {
+        "id": "sao_paulo_2020",
+        "name": "Sao Paulo",
+        "status": "visited",
+        "year": "2020",
+        "cover": "media/sao_paulo/2020/photo/000098240018.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.825580913450768,
+          41.31387074225438
+        ]
+      },
+      "properties": {
+        "id": "tirana_2027",
+        "name": "Tirana",
+        "status": "confirmed",
+        "year": "2027",
+        "cover": "media/sao_paulo/2020/photo/000098240018.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          44.78441858637173,
+          41.71508503475384
+        ]
+      },
+      "properties": {
+        "id": "tbilisi_2027",
+        "name": "Tbilisi",
+        "status": "wishlist",
+        "year": "2027",
+        "cover": "media/sao_paulo/2020/photo/000098240018.jpg"
+      }
+    }
+  ]
+}

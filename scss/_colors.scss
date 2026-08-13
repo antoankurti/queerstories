@@ -1,9 +1,18 @@
 :root {
-    --color-bg: rgb(250, 250, 250);
-    --color-text: rgb(20, 22, 26);
-    --color-primary: #0004ff;
-    --color-secondary: #fabcbc;
-    --color-link-external: rgba(0, 255, 129, 1);
-    --color-accent: firebrick;
-    --color-pop: #F0CF8A;
+
+    /* ══ 1. SURFACES & FONDS ══════════════════════════════════════ */
+    --color-bg:           #fafafa;   /* fond par défaut */
+    --color-bg-dark:      #14161a;   /* fond sombre / contrastes */
+
+    /* ══ 2. BRANDING ══════════════════════════════════════════════ */
+    --color-primary:      #0004ff;   /* Klein blue — gradient titres, liens nav */
+    --color-secondary:    #fabcbc;   /* rose photographique — gradient titres */
+
+    /* ══ 3. ACTION ════════════════════════════════════════════════ */
+    --color-action:       #ff3300;   /* orange électrique — appels à l'action */
+
+    /* ══ 4. DÉCORATIF ═════════════════════════════════════════════ */
+    --color-pop:          #e1c07d;   /* jaune ambré — éditorial, images */
+    --color-accent:       #7c00ff;
+    --color-accent2: color-mix(in oklch, var(--color-primary) 50%, var(--color-action));   /* violet — décoratif, city page */
 }

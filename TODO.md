@@ -19,6 +19,9 @@
 - [ ] Compresser toutes les images (script Node ou squoosh.app)
 - [ ] Remplir les vrais textes dans texts.md (remplacer le Lorem Ipsum)
 
+## Contenu São Paulo
+- [ ] Retravailler le style des blocs graffiti (`.drama`, `.murder-story`) — texte à revoir + explorer couleur de fond (--color-link-external testé, effet décalé intéressant mais texte pas encore au point)
+
 ## Code / CSS
 - [ ] Renommer `_main.scss` → `_city.scss` (c'est la page city, pas du style global)
 - [ ] Créer un mixin `responsive-media` pour éviter la répétition de `.paralax, video, img` dans les deux breakpoints

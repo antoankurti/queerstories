@@ -3,10 +3,10 @@
     "header" :
     [
         { "label" : "cities",     "href" : "index.html"},
-        { "label" : "the work",   "href" : "project.html"},
-        { "label" : "your story", "href" : "participate.html"},
-        { "label" : "on view",    "href" : "exhibition.html", "visible": false },
         { "label" : "the map",    "href" : "map.html"},
+        { "label" : "your story", "href" : "your-story.html"},
+        { "label" : "the work",   "href" : "work.html"},
+        { "label" : "on view",    "href" : "exhibition.html", "visible": false },
         { "label" : "contact",    "href" : "contact.html", "visible": false }
     ]
 }

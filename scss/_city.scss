@@ -152,6 +152,200 @@
     width: $small-size;
 }
 
+// Brief — séparateur sections / thèmes
+.brief-separator {
+    display: block;
+    width: 50px;
+    height: 0;
+    border-top: 2px solid var(--color-link-external);
+    margin: 3rem 0 0 0;
+    background: none;
+}
+
+// Brief — bouton impression
+.brief-print-btn {
+    display: inline-block;
+    margin-top: 2rem;
+    background: none;
+    border: 1px solid var(--color-text);
+    color: var(--color-text);
+    font-family: $font-main;
+    font-size: 0.8rem;
+    font-weight: 500;
+    padding: 0.3rem 0.8rem;
+    cursor: pointer;
+    border-radius: 0;
+
+    &:hover {
+        background: var(--color-text);
+        color: var(--color-bg);
+    }
+}
+
+// Brief — liste de mots (visible écran + impression)
+.brief-word-list {
+    margin-bottom: 2rem;
+
+    p {
+        font-family: $font-main;
+        font-size: 0.62rem;
+        font-weight: 500;
+        letter-spacing: 0.07em;
+        line-height: 2;
+        color: var(--color-text);
+        margin: 0;
+        padding: 0;
+    }
+}
+
+// QR — caché sur écran, coin bas-droit en impression
+.brief-qr {
+    display: none;
+}
+
+// Impression
+@media print {
+    @page {
+        size: A4 portrait;
+        margin: 3cm 2.5cm;
+    }
+
+    // Tout en noir — tue les couleurs, liens oranges inclus
+    *, *::before, *::after {
+        color: black !important;
+        -webkit-text-fill-color: black !important;
+        background: white !important;
+        background-image: none !important;
+        text-decoration: none !important;
+        box-shadow: none !important;
+    }
+
+    header,
+    footer,
+    .brief-lang-switcher,
+    .brief-print-btn,
+    #desktop-hint,
+    #pwa-hint {
+        display: none !important;
+    }
+
+    .written-content {
+        width: 100% !important;
+    }
+
+    // Titre : gras, uppercase, aéré
+    h1 {
+        font-size: 20pt !important;
+        font-weight: 500 !important;
+        text-transform: uppercase !important;
+        letter-spacing: 0.06em !important;
+        line-height: 1.2 !important;
+        margin-top: 1.5em !important;
+        margin-bottom: 0 !important;
+    }
+
+    // Sous-titres : petits, uppercase, bien identifiés
+    h2 {
+        font-size: 7pt !important;
+        font-weight: 600 !important;
+        text-transform: uppercase !important;
+        letter-spacing: 0.14em !important;
+        padding-top: 1.6em !important;
+        margin-bottom: 0.2em !important;
+        page-break-after: avoid;
+    }
+
+    p {
+        font-size: 8.5pt !important;
+        line-height: 1.6 !important;
+        margin: 0 !important;
+        font-weight: 300 !important;
+    }
+
+    article {
+        page-break-inside: avoid;
+    }
+
+    // Liste de mots
+    .brief-word-list {
+        p {
+            font-size: 6pt !important;
+            line-height: 2.1 !important;
+            letter-spacing: 0.06em !important;
+            font-weight: 400 !important;
+        }
+    }
+
+    // Séparateur masqué en impression
+    .brief-separator {
+        display: none !important;
+    }
+
+    // QR — coin bas-droit, fixe hors flux, aligné sur la marge du contenu
+    .brief-qr {
+        display: block !important;
+        position: fixed !important;
+        bottom: 0cm !important;
+        right: 0cm !important;
+
+        img {
+            display: block !important;
+            width: 50px !important;
+            height: 50px !important;
+        }
+    }
+
+    * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+}
+
+// Brief — liens de langue horizontaux
+.brief-lang-switcher {
+    display: flex;
+    gap: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.brief-lang-link {
+    font-family: $font-main;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--color-text);
+    text-decoration: none;
+    padding: 0;
+    cursor: pointer;
+
+    &.active {
+        color: var(--color-secondary);
+        pointer-events: none;
+        cursor: default;
+    }
+
+    &:hover:not(.active) {
+        color: var(--color-primary);
+    }
+}
+
+// Lien caché vers le brief — rectangle cliquable invisible
+.secret-link {
+    display: inline-block;
+    opacity: 0;
+    width: 40px;
+    height: 40px;
+    text-decoration: none;
+    cursor: default;
+    user-select: none;
+    vertical-align: middle;
+
+    &:hover {
+        opacity: 0.15;
+        background: var(--color-text);
+        cursor: pointer;
+    }
+}
+
 @media screen and (min-width: $bp-medium) {
     .media-content {
         width: $m-main-width;
@@ -334,10 +528,10 @@
         h1, h2 { column-span: all; }
 
         p {
-            margin: 0 1rem 1rem 1rem;
+            margin: 0 0 1rem 0;
             padding: 0;
-            orphans: 2; // min. 2 lignes en bas d'une colonne avant rupture
-            widows: 2;  // min. 2 lignes en haut d'une colonne après rupture
+            orphans: 2;
+            widows: 2;
         }
     }
 }
@@ -391,3 +585,4 @@
         width: $l-main-width;
     }
 }
+

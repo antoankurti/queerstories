@@ -4,17 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Map — I knew you existed</title>
-    <meta name="description" content="A map of queer stories from cities around the world.">
-    <meta name="author" content="Antoan Kurti">
-
-    <!-- Open Graph -->
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="I knew you existed">
-    <meta property="og:title" content="Map — I knew you existed">
-    <meta property="og:description" content="A map of queer stories from cities around the world.">
-    <meta property="og:url" content="https://VOTRE-DOMAINE.com/map.html">
-    <meta property="og:image" content="https://VOTRE-DOMAINE.com/media/og-cover.jpg">
+    <title>Participant brief — I knew you existed</title>
+    <!-- page volontairement non indexée -->
+    <meta name="robots" content="noindex, nofollow">
 
     <!-- PWA -->
     <link rel="manifest" href="manifest.json">
@@ -27,19 +19,20 @@
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="css/styles.css">
     <script src="js/nav.js" defer></script>
-    <link href="https://cdn.jsdelivr.net/npm/maplibre-gl@4/dist/maplibre-gl.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/maplibre-gl@4/dist/maplibre-gl.js"></script>
 </head>
 
-<body class="map-page">
+<body>
     <header>
-        <nav></nav>
+        <nav>
+            <!-- liens injectés par js/nav.js — données : data/nav.json -->
+        </nav>
     </header>
 
-    <main id="map-container">
-        <!-- carte à construire -->
+    <main class="written-content" id="brief-content">
+        <!-- contenu injecté par js/brief.js depuis data/brief.json -->
     </main>
 
+    <!-- hr + copyright injectés par js/nav.js -->
     <footer></footer>
 
     <!-- QR code desktop -->
@@ -62,9 +55,10 @@
         </div>
     </div>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
     <script src="js/pwa.js" defer></script>
-    <script src="js/map_popup.js" defer></script>
-    <script src="js/map.js" defer></script>
+    <script src="js/brief.js" defer></script>
+    <div id="brief-qr" class="brief-qr" aria-hidden="true"></div>
 </body>
 
 </html>

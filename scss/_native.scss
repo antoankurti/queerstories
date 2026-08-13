@@ -16,6 +16,10 @@
     box-sizing: border-box;
 }
 
+html {
+    height: 100vh;
+}
+
 body {
     display: flex;
     flex-direction: column;

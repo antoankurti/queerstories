@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your story — I knew you existed</title>
+    <meta name="description" content="Participate in I knew you existed — share your experience as a queer person in your city, in whatever form feels right.">
+    <meta name="author" content="Antoan Kurti">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="I knew you existed">
+    <meta property="og:title" content="Your story — I knew you existed">
+    <meta property="og:description" content="Participate in I knew you existed — share your experience as a queer person in your city, in whatever form feels right.">
+    <meta property="og:url" content="https://VOTRE-DOMAINE.com/your-story.html">
+    <meta property="og:image" content="https://VOTRE-DOMAINE.com/media/og-cover.jpg">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Your story — I knew you existed">
+    <meta name="twitter:description" content="Participate in I knew you existed — share your experience as a queer person in your city, in whatever form feels right.">
+    <meta name="twitter:image" content="https://VOTRE-DOMAINE.com/media/og-cover.jpg">
+
+    <!-- PWA -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#14161a">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="IKYE">
+    <link rel="apple-touch-icon" href="media/icons/icon-apple.png">
+
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/nav.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <!-- liens injectés par js/nav.js — données : data/nav.json -->
+        </nav>
+    </header>
+
+    <main class="written-content">
+
+        <!-- ── INTRO ─────────────────────────────────────────────────── -->
+        <article>
+            <h1>Your story</h1>
+
+            <p>This is not an interview. It is a conversation about the city you live in, who you are inside it, what it costs and what it gives back. There are no right answers, no statistics, no conclusion drawn in advance.</p>
+
+            <p>The conversation takes whatever form feels right: a video, a photograph, a voice recording, a text you send days later once the words have settled. Each medium holds something the others cannot. We use all of them, without hierarchy.</p>
+
+            <p>Visibility is not a requirement. A face can be blurred, a voice altered, a name replaced. Participation is not the same as exposure. If discretion matters to you, we will find a way together before anything is recorded or published.</p>
+        </article>
+
+        <!-- ── THÈMES ─────────────────────────────────────────────────── -->
+        <article>
+            <h2>The themes</h2>
+
+            <p>The city — politics & institutions — religion — community — memory — visibility & discretion — body & desire — sex work — health — digital life — future — queer joy.</p>
+
+            <p>You choose two or three. You can also bring something not on the list.</p>
+        </article>
+
+        <!-- ── CONTACT ───────────────────────────────────────────────── -->
+        <section class="action-links">
+            <p class="contact-lead">—</p>
+            <a href="https://www.instagram.com/antoankurti">instagram</a>
+            <a href="mailto:hello@antoankurti.com">email</a>
+        </section>
+
+    </main>
+
+    <!-- hr + copyright injectés par js/nav.js -->
+    <footer></footer>
+
+    <!-- QR code desktop -->
+    <div id="desktop-hint">
+        <div class="pwa-frame">
+            <div id="desktop-hint-qr"></div>
+            <p class="pwa-title">Open on your phone.</p>
+            <p class="pwa-subtitle">Scan to install — made for mobile.</p>
+            <button id="desktop-hint-close">✕</button>
+        </div>
+    </div>
+
+    <!-- Hint iOS -->
+    <div id="pwa-hint">
+        <div class="pwa-frame">
+            <p class="pwa-title">This website is best viewed as an app.</p>
+            <p class="pwa-subtitle">Tap the button below, then choose "Add to Home Screen".</p>
+            <button id="pwa-share">Add to screen</button>
+            <button id="pwa-hint-close">✕</button>
+        </div>
+    </div>
+
+    <script src="js/pwa.js" defer></script>
+</body>
+
+</html>

@@ -6,7 +6,7 @@
 
 :root {
     font-family: sans-serif;
-    color: var(--color-text);
+    color: var(--color-bg-dark);
     font-size: clamp(0.875rem, 2.5vw, 1.25rem);
 }
 
@@ -51,7 +51,7 @@ p {
 a {
     font-size: 0.8em;
     font-weight: 500;
-    color: var(--color-text);
+    color: var(--color-bg-dark);
     text-decoration: none;
     transition: color 200ms;
 
@@ -60,25 +60,32 @@ a {
     }
     &.active {
         color: var(--color-secondary);
+        pointer-events: none;
+        cursor: default;
     }
 }
 
-.external-links {
+.action-links {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     padding-top: 10px;
 
     .contact-lead {
-        color: var(--color-text);
-        margin-bottom: 0.5rem;
-        font-weight: 300;
+        font-size: 0; // masque le — dans le HTML
+        display: block;
+        width: 50px;
+        height: 0;
+        border-top: 2px solid var(--color-action);
+        margin: 1.5rem 0 1rem 0;
+        padding: 0;
+        background: none;
     }
 
     a {
         font-size: 1em;
         font-family: $font-mono;
-        color: var(--color-link-external); // vert — DA liens externes ≠ liens internes
+        color: var(--color-action); // vert — DA liens externes ≠ liens internes
     }
 
     a:hover {
@@ -86,22 +93,6 @@ a {
     }
 }
 
-footer {
-    color: var(--color-text);
-
-    a {
-        font-size: 1em;
-        font-family: $font-mono;
-    }
-
-    a:hover {
-        color: var(--color-link-external);
-    }
-
-    p {
-        padding: 0;
-    }
-}
 
 @media screen and (min-width: $bp-medium) {
     :root {

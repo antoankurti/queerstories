@@ -1,3 +1,30 @@
 [
-  { "id": "sao_paulo_2020", "name": "Sao Paulo", "year": "2020", "cover": "media/sao_paulo/2020/photo/000098240018.jpg" }
+  {
+    "id": "sao_paulo_2020",
+    "name": "Sao Paulo",
+    "lng": -46.65717777868016,
+    "lat": -23.56211919370975,
+    "status":"visited",
+    "year": "2020",
+    "cover": "media/sao_paulo/2020/photo/000098240018.jpg" },
+
+  {
+    "id": "tirana_2027",
+    "name": "Tirana",
+    "lng": 19.825580913450768,
+    "lat": 41.31387074225438,
+    "status":"confirmed",
+    "year": "2027",
+    "cover": "media/sao_paulo/2020/photo/000098240018.jpg" },
+
+    
+    {
+    "id": "tbilisi_2027",
+    "name": "Tbilisi",
+    "lng": 44.78441858637173,
+    "lat": 41.71508503475384,
+    "status":"wishlist",
+    "year": "2027",
+    "cover": "media/sao_paulo/2020/photo/000098240018.jpg" }
 ]
+ 

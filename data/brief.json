@@ -1,0 +1,348 @@
+{
+    "languages": [
+        { "code": "en", "label": "English" },
+        { "code": "fr", "label": "Français" },
+        { "code": "pt", "label": "Português" }
+    ],
+    "projectTitle": {
+        "en": "I knew you existed",
+        "fr": "Je savais que tu existais",
+        "pt": "Eu sabia que você existia"
+    },
+    "sections": [
+        {
+            "id": "about",
+            "title": {
+                "en": "About the project",
+                "fr": "Le projet",
+                "pt": "Sobre o projeto"
+            },
+            "body": {
+                "en": "I knew you existed is a multimedia documentary of queer lives across cities. It began in São Paulo in 2020 and continues wherever a community is willing to speak and a city is worth reading. Testimonies are collected in the form of video, photography, audio recording, and written text — without hierarchy between these forms. Each city receives its own space on the site.",
+                "fr": "I knew you existed est un documentaire multimédia de vies queer à travers les villes. Commencé à São Paulo en 2020, il se poursuit partout où une communauté accepte de parler et où une ville mérite d'être lue. Les témoignages sont recueillis sous forme de vidéo, photographie, enregistrement audio et texte écrit — sans hiérarchie entre ces formes. Chaque ville dispose de son propre espace sur le site.",
+                "pt": "I knew you existed é um documentário multimídia de vidas queer em diversas cidades. Começou em São Paulo em 2020 e continua onde quer que uma comunidade esteja disposta a falar e uma cidade mereça ser lida. Os depoimentos são coletados em forma de vídeo, fotografia, gravação de áudio e texto escrito — sem hierarquia entre esses formatos. Cada cidade tem seu próprio espaço no site."
+            }
+        },
+        {
+            "id": "format",
+            "title": {
+                "en": "The format",
+                "fr": "Le format",
+                "pt": "O formato"
+            },
+            "body": {
+                "en": "You choose what to share and how. A video, any length. A photograph. A voice recording. A text written in the days that follow our meeting. You can combine formats or choose just one. There is no script, no required duration, no right answer. You also choose two or three themes from the list below. If something important to you is missing, bring it and we will add it.",
+                "fr": "C'est toi qui choisis ce que tu partages et comment. Une vidéo, de n'importe quelle durée. Une photographie. Un enregistrement vocal. Un texte rédigé dans les jours qui suivent notre rencontre. Tu peux combiner les formats ou n'en choisir qu'un. Il n'y a pas de script, pas de durée imposée, pas de bonne réponse. Tu choisis aussi deux ou trois thèmes dans la liste ci-dessous. S'il manque quelque chose d'important, amène-le et on l'ajoutera.",
+                "pt": "Você escolhe o que compartilhar e como. Um vídeo — de qualquer duração. Uma fotografia. Uma gravação de voz. Um texto escrito nos dias que se seguem ao nosso encontro. Você pode combinar formatos ou escolher apenas um. Não há roteiro, duração exigida nem resposta certa. Você também escolhe dois ou três temas da lista abaixo. Se algo importante para você estiver faltando, traga — vamos adicionar."
+            }
+        },
+        {
+            "id": "discretion",
+            "title": {
+                "en": "Discretion",
+                "fr": "Discrétion",
+                "pt": "Discrição"
+            },
+            "body": {
+                "en": "Participation does not require visibility. If you prefer not to be identified, we can blur your face, alter your voice, or publish your testimony under a pseudonym. Nothing will be shared or published without your explicit consent. We discuss this together before anything is recorded.",
+                "fr": "Participer ne signifie pas nécessairement être visible. Si tu préfères ne pas être identifié·e, nous pouvons flouter ton visage, modifier ta voix ou publier ton témoignage sous un pseudonyme. Rien ne sera partagé ni publié sans ton consentement explicite. Nous en discutons ensemble avant que quoi que ce soit soit enregistré.",
+                "pt": "Participar não exige visibilidade. Se preferir não ser identificado/a, podemos borrar seu rosto, alterar sua voz ou publicar seu depoimento sob um pseudônimo. Nada será compartilhado ou publicado sem seu consentimento explícito. Conversamos sobre isso juntos antes de qualquer gravação."
+            }
+        },
+        {
+            "id": "about-me",
+            "title": {
+                "en": "About me",
+                "fr": "À propos de moi",
+                "pt": "Sobre mim"
+            },
+            "body": {
+                "en": "I studied fine arts in Belgium as a video artist, and spent years working in LGBTQIA+ politics. I come from Kosovo, a country where being gay is not accepted, and I did not accept myself for a long time. This project is, in part, a way of leaving behind documents I would have needed. Not only for future generations, but for anyone who needs to know that others have lived this.",
+                "fr": "J'ai étudié les beaux-arts en Belgique en tant qu'artiste vidéo, et j'ai passé des années à travailler dans la politique LGBTQIA+. Je viens du Kosovo, un pays où être gay n'est pas accepté, et je ne me suis pas accepté moi-même pendant longtemps. Ce projet est, en partie, une façon de laisser derrière moi les documents dont j'aurais eu besoin. Pas seulement pour les générations futures, mais pour quiconque a besoin de savoir que d'autres ont vécu cela.",
+                "pt": "Estudei belas artes na Bélgica como artista de vídeo e passei anos trabalhando com política LGBTQIA+. Sou do Kosovo, um país onde ser gay não é aceito, e não me aceitei por muito tempo. Este projeto é, em parte, uma forma de deixar para trás os documentos de que eu precisaria. Não apenas para as gerações futuras, mas para qualquer pessoa que precise saber que outros viveram isso."
+            }
+        },
+        {
+            "id": "thanks",
+            "title": {
+                "en": "Before we start",
+                "fr": "Avant de commencer",
+                "pt": "Antes de começar"
+            },
+            "body": {
+                "en": "Thank you. For your time, your trust, and your willingness to put your life into words. It means more than I can easily say.",
+                "fr": "Merci. Pour ton temps, ta confiance, et ta volonté de mettre ta vie en mots. Cela compte plus que je ne sais l'exprimer.",
+                "pt": "Obrigado. Pelo seu tempo, sua confiança e sua disposição de colocar sua vida em palavras. Isso significa mais do que consigo dizer."
+            }
+        }
+    ],
+    "themes": [
+        {
+            "id": "city",
+            "title": { "en": "The city", "fr": "La ville", "pt": "A cidade" },
+            "questions": {
+                "en": [
+                    "How does it feel to be queer in [city]?",
+                    "Did you choose this city, or did you not have a choice?",
+                    "Is there a part of the city that feels like yours?",
+                    "What does this city give you that you couldn't find elsewhere?",
+                    "Would you stay? Would you leave?"
+                ],
+                "fr": [
+                    "Comment est-ce d'être queer à [ville] ?",
+                    "Tu as choisi cette ville, ou tu n'avais pas vraiment le choix ?",
+                    "Y a-t-il un endroit dans la ville qui te semble à toi ?",
+                    "Qu'est-ce que cette ville te donne que tu ne trouverais pas ailleurs ?",
+                    "Tu resterais ? Tu partirais ?"
+                ],
+                "pt": [
+                    "Como é ser queer em [cidade]?",
+                    "Você escolheu esta cidade, ou não tinha escolha?",
+                    "Há alguma parte da cidade que você sente como sua?",
+                    "O que esta cidade te dá que você não encontraria em outro lugar?",
+                    "Você ficaria? Você iria embora?"
+                ]
+            }
+        },
+        {
+            "id": "politics",
+            "title": { "en": "Politics & institutions", "fr": "Politique & institutions", "pt": "Política & instituições" },
+            "questions": {
+                "en": [
+                    "What is the political context for queer people here right now?",
+                    "Are institutions — police, hospitals, schools — a help or a risk?",
+                    "What about the law: marriage, adoption, gender recognition?",
+                    "What does political change feel like from where you stand?"
+                ],
+                "fr": [
+                    "Quel est le contexte politique pour les personnes queer ici en ce moment ?",
+                    "Les institutions — police, hôpitaux, écoles — sont-elles une aide ou un risque ?",
+                    "Et la loi : mariage, adoption, reconnaissance de genre ?",
+                    "Comment ressens-tu le changement politique de là où tu te trouves ?"
+                ],
+                "pt": [
+                    "Qual é o contexto político para pessoas queer aqui agora?",
+                    "As instituições — polícia, hospitais, escolas — são uma ajuda ou um risco?",
+                    "E a lei: casamento, adoção, reconhecimento de gênero?",
+                    "Como você sente a mudança política de onde está?"
+                ]
+            }
+        },
+        {
+            "id": "religion",
+            "title": { "en": "Religion", "fr": "Religion", "pt": "Religião" },
+            "questions": {
+                "en": [
+                    "Is religion present in your life?",
+                    "How do you navigate the relationship between faith and queerness — or is there no tension?",
+                    "What does the religious landscape of your city feel like to you?"
+                ],
+                "fr": [
+                    "La religion est-elle présente dans ta vie ?",
+                    "Comment navigues-tu dans la relation entre foi et queerness — ou n'y a-t-il pas de tension ?",
+                    "Comment perçois-tu le paysage religieux de ta ville ?"
+                ],
+                "pt": [
+                    "A religião está presente na sua vida?",
+                    "Como você navega na relação entre fé e queerness — ou não há tensão?",
+                    "Como você percebe o cenário religioso da sua cidade?"
+                ]
+            }
+        },
+        {
+            "id": "community",
+            "title": { "en": "Community", "fr": "Communauté", "pt": "Comunidade" },
+            "questions": {
+                "en": [
+                    "Do you have a queer community here?",
+                    "What does chosen family mean to you?",
+                    "Are there tensions within queer spaces — around class, race, gender, visibility?"
+                ],
+                "fr": [
+                    "As-tu une communauté queer ici ?",
+                    "Que signifie la famille choisie pour toi ?",
+                    "Y a-t-il des tensions au sein des espaces queer — autour de la classe, de la race, du genre, de la visibilité ?"
+                ],
+                "pt": [
+                    "Você tem uma comunidade queer aqui?",
+                    "O que família escolhida significa para você?",
+                    "Há tensões dentro dos espaços queer — em torno de classe, raça, gênero, visibilidade?"
+                ]
+            }
+        },
+        {
+            "id": "memory",
+            "title": { "en": "Memory", "fr": "Mémoire", "pt": "Memória" },
+            "questions": {
+                "en": [
+                    "When did you first know?",
+                    "What was it like to grow up queer in this city?",
+                    "What do you wish someone had told you?"
+                ],
+                "fr": [
+                    "Quand as-tu su pour la première fois ?",
+                    "Comment était-ce de grandir queer dans cette ville ?",
+                    "Qu'aurais-tu voulu qu'on te dise ?"
+                ],
+                "pt": [
+                    "Quando você soube pela primeira vez?",
+                    "Como foi crescer queer nesta cidade?",
+                    "O que você gostaria que alguém tivesse te dito?"
+                ]
+            }
+        },
+        {
+            "id": "visibility",
+            "title": { "en": "Visibility & discretion", "fr": "Visibilité & discrétion", "pt": "Visibilidade & discrição" },
+            "questions": {
+                "en": [
+                    "Are you out? To whom?",
+                    "How much of yourself do you show in public?",
+                    "What does visibility cost you here — and what does it give?"
+                ],
+                "fr": [
+                    "Es-tu out ? Avec qui ?",
+                    "Quelle part de toi montres-tu en public ?",
+                    "Qu'est-ce que la visibilité te coûte ici — et qu'est-ce qu'elle te donne ?"
+                ],
+                "pt": [
+                    "Você é assumido/a? Para quem?",
+                    "O quanto de você você mostra em público?",
+                    "O que a visibilidade te custa aqui — e o que ela te dá?"
+                ]
+            }
+        },
+        {
+            "id": "body",
+            "title": { "en": "Body & desire", "fr": "Corps & désir", "pt": "Corpo & desejo" },
+            "questions": {
+                "en": [
+                    "What are the beauty standards in queer spaces here?",
+                    "How do you relate to your body?",
+                    "What does desire look like for you in practice?",
+                    "Cruising, apps, bars — how do you meet people?",
+                    "What about kink or fetish — is that part of your life?"
+                ],
+                "fr": [
+                    "Quels sont les standards de beauté dans les espaces queer ici ?",
+                    "Quel est ton rapport à ton corps ?",
+                    "À quoi ressemble le désir pour toi en pratique ?",
+                    "Cruising, applis, bars — comment rencontres-tu des gens ?",
+                    "Et le kink ou le fétiche — est-ce que ça fait partie de ta vie ?"
+                ],
+                "pt": [
+                    "Quais são os padrões de beleza nos espaços queer aqui?",
+                    "Qual é a sua relação com o seu corpo?",
+                    "Como é o desejo para você na prática?",
+                    "Cruising, aplicativos, bares — como você conhece pessoas?",
+                    "E kink ou fetiche — isso faz parte da sua vida?"
+                ]
+            }
+        },
+        {
+            "id": "sex-work",
+            "title": { "en": "Sex work", "fr": "Travail du sexe", "pt": "Trabalho sexual" },
+            "questions": {
+                "en": [
+                    "What is the landscape of sex work here?",
+                    "How is it perceived — within the queer community, and outside it?",
+                    "Is there a meaningful difference between escorting and prostitution, in your view?"
+                ],
+                "fr": [
+                    "Quel est le paysage du travail du sexe ici ?",
+                    "Comment est-il perçu — au sein de la communauté queer et en dehors ?",
+                    "Y a-t-il une différence significative entre l'escorting et la prostitution, selon toi ?"
+                ],
+                "pt": [
+                    "Qual é o cenário do trabalho sexual aqui?",
+                    "Como é percebido — dentro da comunidade queer e fora dela?",
+                    "Há uma diferença significativa entre acompanhamento e prostituição, na sua opinião?"
+                ]
+            }
+        },
+        {
+            "id": "health",
+            "title": { "en": "Health", "fr": "Santé", "pt": "Saúde" },
+            "questions": {
+                "en": [
+                    "PrEP, HIV, undetectable — what does this mean in your life?",
+                    "How does the healthcare system treat queer bodies here?",
+                    "What about mental health?"
+                ],
+                "fr": [
+                    "PrEP, VIH, indétectable — qu'est-ce que cela signifie dans ta vie ?",
+                    "Comment le système de santé traite-t-il les corps queer ici ?",
+                    "Et la santé mentale ?"
+                ],
+                "pt": [
+                    "PrEP, HIV, indetectável — o que isso significa na sua vida?",
+                    "Como o sistema de saúde trata os corpos queer aqui?",
+                    "E a saúde mental?"
+                ]
+            }
+        },
+        {
+            "id": "digital",
+            "title": { "en": "Digital life", "fr": "Vie numérique", "pt": "Vida digital" },
+            "questions": {
+                "en": [
+                    "How do apps shape queer life in your city?",
+                    "Is your online queer identity different from your offline one?"
+                ],
+                "fr": [
+                    "Comment les applis façonnent-elles la vie queer dans ta ville ?",
+                    "Ton identité queer en ligne est-elle différente de celle hors ligne ?"
+                ],
+                "pt": [
+                    "Como os aplicativos moldam a vida queer na sua cidade?",
+                    "Sua identidade queer online é diferente da offline?"
+                ]
+            }
+        },
+        {
+            "id": "future",
+            "title": { "en": "Future", "fr": "Futur", "pt": "Futuro" },
+            "questions": {
+                "en": [
+                    "Where do you see yourself in this city in ten years?",
+                    "What would you want future queers here to know?",
+                    "What would it take for things to change?",
+                    "Do queer retirement homes exist here? Should they?"
+                ],
+                "fr": [
+                    "Où te vois-tu dans cette ville dans dix ans ?",
+                    "Qu'est-ce que tu voudrais que les futur·es queer ici sachent ?",
+                    "Qu'est-ce qu'il faudrait pour que les choses changent ?",
+                    "Des maisons de retraite queer existent-elles ici ? Devraient-elles ?"
+                ],
+                "pt": [
+                    "Onde você se vê nesta cidade em dez anos?",
+                    "O que você gostaria que futuros queer aqui soubessem?",
+                    "O que seria necessário para as coisas mudarem?",
+                    "Existem casas de repouso queer aqui? Deveriam existir?"
+                ]
+            }
+        },
+        {
+            "id": "joy",
+            "title": { "en": "Queer joy", "fr": "Joie queer", "pt": "Alegria queer" },
+            "questions": {
+                "en": [
+                    "What brings you joy as a queer person in this city?",
+                    "What does queer celebration look like here?",
+                    "What are you proud of?"
+                ],
+                "fr": [
+                    "Qu'est-ce qui te procure de la joie en tant que personne queer dans cette ville ?",
+                    "À quoi ressemble la célébration queer ici ?",
+                    "De quoi es-tu fier·ère ?"
+                ],
+                "pt": [
+                    "O que te traz alegria como pessoa queer nesta cidade?",
+                    "Como é a celebração queer aqui?",
+                    "Do que você tem orgulho?"
+                ]
+            }
+        }
+    ]
+}

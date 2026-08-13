@@ -2,13 +2,18 @@
 /* Import elements */
 @import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@500&family=Jost:wght@100;200;300;500;700&family=Lacquer&family=Permanent+Marker&family=Zilla+Slab+Highlight&display=swap");
 :root {
-  --color-bg: rgb(250, 250, 250);
-  --color-text: rgb(20, 22, 26);
-  --color-primary: #0004ff;
-  --color-secondary: #fabcbc;
-  --color-link-external: rgba(0, 255, 129, 1);
-  --color-accent: firebrick;
-  --color-pop: #F0CF8A;
+  /* ══ 1. SURFACES & FONDS ══════════════════════════════════════ */
+  --color-bg: #fafafa; /* fond par défaut */
+  --color-bg-dark: #14161a; /* fond sombre / contrastes */
+  /* ══ 2. BRANDING ══════════════════════════════════════════════ */
+  --color-primary: #0004ff; /* Klein blue — gradient titres, liens nav */
+  --color-secondary: #fabcbc; /* rose photographique — gradient titres */
+  /* ══ 3. ACTION ════════════════════════════════════════════════ */
+  --color-action: #ff3300; /* orange électrique — appels à l'action */
+  /* ══ 4. DÉCORATIF ═════════════════════════════════════════════ */
+  --color-pop: #e1c07d; /* jaune ambré — éditorial, images */
+  --color-accent: #7c00ff;
+  --color-accent2: color-mix(in oklch, var(--color-primary) 50%, var(--color-action)); /* violet — décoratif, city page */
 }
 
 :root {
@@ -26,6 +31,10 @@
   box-sizing: border-box;
 }
 
+html {
+  height: 100vh;
+}
+
 body {
   display: flex;
   flex-direction: column;
@@ -36,7 +45,7 @@ body {
 
 :root {
   font-family: sans-serif;
-  color: var(--color-text);
+  color: var(--color-bg-dark);
   font-size: clamp(0.875rem, 2.5vw, 1.25rem);
 }
 
@@ -79,7 +88,7 @@ p {
 a {
   font-size: 0.8em;
   font-weight: 500;
-  color: var(--color-text);
+  color: var(--color-bg-dark);
   text-decoration: none;
   transition: color 200ms;
 }
@@ -88,40 +97,33 @@ a:hover {
 }
 a.active {
   color: var(--color-secondary);
+  pointer-events: none;
+  cursor: default;
 }
 
-.external-links {
+.action-links {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   padding-top: 10px;
 }
-.external-links .contact-lead {
-  color: var(--color-text);
-  margin-bottom: 0.5rem;
-  font-weight: 300;
-}
-.external-links a {
-  font-size: 1em;
-  font-family: "Inconsolata";
-  color: var(--color-link-external);
-}
-.external-links a:hover {
-  opacity: 0.7;
-}
-
-footer {
-  color: var(--color-text);
-}
-footer a {
-  font-size: 1em;
-  font-family: "Inconsolata";
-}
-footer a:hover {
-  color: var(--color-link-external);
-}
-footer p {
+.action-links .contact-lead {
+  font-size: 0;
+  display: block;
+  width: 50px;
+  height: 0;
+  border-top: 2px solid var(--color-action);
+  margin: 1.5rem 0 1rem 0;
   padding: 0;
+  background: none;
+}
+.action-links a {
+  font-size: 1em;
+  font-family: "Inconsolata";
+  color: var(--color-action);
+}
+.action-links a:hover {
+  opacity: 0.7;
 }
 
 @media screen and (min-width: 768px) {
@@ -253,10 +255,6 @@ header nav {
     font-size: 14.5vw;
   }
 }
-.sao-paulo {
-  background-image: url("../media/sao_paulo/photo/IMG_7817.jpg");
-}
-
 /* CONTAINER */
 .media-content {
   width: 100vw;
@@ -396,6 +394,169 @@ header nav {
 
 .written-content {
   width: 84vw;
+}
+
+.brief-separator {
+  display: block;
+  width: 50px;
+  height: 0;
+  border-top: 2px solid var(--color-link-external);
+  margin: 3rem 0 0 0;
+  background: none;
+}
+
+.brief-print-btn {
+  display: inline-block;
+  margin-top: 2rem;
+  background: none;
+  border: 1px solid var(--color-text);
+  color: var(--color-text);
+  font-family: "Jost";
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding: 0.3rem 0.8rem;
+  cursor: pointer;
+  border-radius: 0;
+}
+.brief-print-btn:hover {
+  background: var(--color-text);
+  color: var(--color-bg);
+}
+
+.brief-word-list {
+  margin-bottom: 2rem;
+}
+.brief-word-list p {
+  font-family: "Jost";
+  font-size: 0.62rem;
+  font-weight: 500;
+  letter-spacing: 0.07em;
+  line-height: 2;
+  color: var(--color-text);
+  margin: 0;
+  padding: 0;
+}
+
+.brief-qr {
+  display: none;
+}
+
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 3cm 2.5cm;
+  }
+  *, *::before, *::after {
+    color: black !important;
+    -webkit-text-fill-color: black !important;
+    background: white !important;
+    background-image: none !important;
+    text-decoration: none !important;
+    box-shadow: none !important;
+  }
+  header,
+  footer,
+  .brief-lang-switcher,
+  .brief-print-btn,
+  #desktop-hint,
+  #pwa-hint {
+    display: none !important;
+  }
+  .written-content {
+    width: 100% !important;
+  }
+  h1 {
+    font-size: 20pt !important;
+    font-weight: 500 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.06em !important;
+    line-height: 1.2 !important;
+    margin-top: 1.5em !important;
+    margin-bottom: 0 !important;
+  }
+  h2 {
+    font-size: 7pt !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.14em !important;
+    padding-top: 1.6em !important;
+    margin-bottom: 0.2em !important;
+    page-break-after: avoid;
+  }
+  p {
+    font-size: 8.5pt !important;
+    line-height: 1.6 !important;
+    margin: 0 !important;
+    font-weight: 300 !important;
+  }
+  article {
+    page-break-inside: avoid;
+  }
+  .brief-word-list p {
+    font-size: 6pt !important;
+    line-height: 2.1 !important;
+    letter-spacing: 0.06em !important;
+    font-weight: 400 !important;
+  }
+  .brief-separator {
+    display: none !important;
+  }
+  .brief-qr {
+    display: block !important;
+    position: fixed !important;
+    bottom: 0cm !important;
+    right: 0cm !important;
+  }
+  .brief-qr img {
+    display: block !important;
+    width: 50px !important;
+    height: 50px !important;
+  }
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+}
+.brief-lang-switcher {
+  display: flex;
+  gap: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.brief-lang-link {
+  font-family: "Jost";
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--color-text);
+  text-decoration: none;
+  padding: 0;
+  cursor: pointer;
+}
+.brief-lang-link.active {
+  color: var(--color-secondary);
+  pointer-events: none;
+  cursor: default;
+}
+.brief-lang-link:hover:not(.active) {
+  color: var(--color-primary);
+}
+
+.secret-link {
+  display: inline-block;
+  opacity: 0;
+  width: 40px;
+  height: 40px;
+  text-decoration: none;
+  cursor: default;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  vertical-align: middle;
+}
+.secret-link:hover {
+  opacity: 0.15;
+  background: var(--color-text);
+  cursor: pointer;
 }
 
 @media screen and (min-width: 768px) {
@@ -570,7 +731,7 @@ header nav {
          column-span: all;
   }
   .col p {
-    margin: 0 1rem 1rem 1rem;
+    margin: 0 0 1rem 0;
     padding: 0;
     orphans: 2;
     widows: 2;
@@ -674,8 +835,8 @@ footer {
 }
 @keyframes pwa-frame-flash {
   0%, 32% {
-    border-top-color: var(--color-link-external);
-    border-left-color: var(--color-link-external);
+    border-top-color: var(--color-action);
+    border-left-color: var(--color-action);
     border-right-color: var(--color-primary);
     border-bottom-color: var(--color-primary);
   }
@@ -688,16 +849,16 @@ footer {
   66%, 100% {
     border-top-color: var(--color-secondary);
     border-left-color: var(--color-secondary);
-    border-right-color: var(--color-link-external);
-    border-bottom-color: var(--color-link-external);
+    border-right-color: var(--color-action);
+    border-bottom-color: var(--color-action);
   }
 }
 .pwa-frame {
   width: 100%;
   height: 100%;
   border: 14px solid;
-  border-top-color: var(--color-link-external);
-  border-left-color: var(--color-link-external);
+  border-top-color: var(--color-action);
+  border-left-color: var(--color-action);
   border-right-color: var(--color-primary);
   border-bottom-color: var(--color-primary);
   animation: pwa-frame-flash 0.4s step-end infinite;
@@ -721,7 +882,7 @@ footer {
   font-weight: 400;
   line-height: 1.3;
   margin: 0.4rem 0 0 0;
-  color: var(--color-text);
+  color: var(--color-bg-dark);
 }
 
 button#pwa-hint-close,
@@ -755,7 +916,7 @@ button#desktop-hint-close:hover {
   border-radius: 0.15rem;
   z-index: 999;
   font-family: "Jost";
-  color: var(--color-text);
+  color: var(--color-bg-dark);
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.4s ease;
@@ -807,8 +968,18 @@ button#desktop-hint-close:hover {
     border-radius: 0.15rem;
     z-index: 999;
     font-family: "Jost";
-    color: var(--color-text);
+    color: var(--color-bg-dark);
     display: block;
+  }
+  #desktop-hint .pwa-frame {
+    justify-content: center;
+    align-items: center;
+    gap: 0.6rem;
+  }
+  #desktop-hint .pwa-title,
+  #desktop-hint .pwa-subtitle {
+    text-align: center;
+    margin: 0;
   }
 }
 
@@ -854,4 +1025,76 @@ body.city-page header {
   body.city-page header nav a:first-child:hover {
     color: var(--color-primary);
   }
+}
+
+body.map-page {
+  height: 100vh;
+  overflow: hidden;
+}
+
+#map-container {
+  width: 84vw;
+  flex: 1;
+  min-height: 0;
+}
+@media screen and (min-width: 768px) {
+  #map-container {
+    width: 870px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  #map-container {
+    width: 1215px;
+  }
+}
+
+.maplibregl-ctrl-attrib.maplibregl-compact-show {
+  background: rgba(255, 255, 255, 0.85) !important;
+  font-size: 7px;
+  padding: 4px 8px;
+  opacity: 0.25;
+}
+
+.popup-cover {
+  width: 100%;
+  aspect-ratio: 4/5;
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: block;
+}
+
+.maplibregl-popup-content {
+  max-width: 50vw;
+  background: transparent;
+  box-shadow: none;
+  padding: 0;
+}
+.maplibregl-popup-content a {
+  display: block;
+  font-family: "Inconsolata";
+  font-size: 11px;
+  font-weight: 700;
+  margin-top: 0.8rem;
+  padding: 0;
+  color: var(--color-action);
+}
+.maplibregl-popup-content a:hover {
+  opacity: 0.7;
+  color: var(--color-action);
+}
+.maplibregl-popup-content h3 {
+  font-family: "Jost";
+  font-size: 16px;
+  margin: 0.3em 0 0.1em;
+  letter-spacing: 0.05em;
+}
+.maplibregl-popup-content span {
+  font-family: "Inconsolata";
+  font-weight: 400;
+  font-size: 11px;
+  color: var(--color-bg-dark);
+  display: block;
+}
+.maplibregl-popup-content p {
+  font-weight: 400;
 }/*# sourceMappingURL=styles.css.map */
