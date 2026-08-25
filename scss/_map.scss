@@ -51,6 +51,36 @@ body.map-page {
     display: block;
 }
 
+// ─── LÉGENDE ──────────────────────────────────────────────────────────────────
+
+#map-legend {
+    position: absolute;
+    bottom: 2rem;
+    left: 0.8rem;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    font-family: $font-mono;
+    font-size: 10px;
+    color: var(--color-bg-dark);
+    pointer-events: none;
+
+    .legend-item {
+        display: flex;
+        align-items: center;
+        gap: 0.4rem;
+    }
+
+    svg {
+        width: 10px;
+        height: 10px;
+        flex-shrink: 0;
+    }
+}
+
+// ─── POPUP ───────────────────────────────────────────────────
+
 .maplibregl-popup-content {
     max-width: 50vw;
     background: transparent;

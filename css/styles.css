@@ -200,10 +200,31 @@ header nav {
   gap: 0.2rem;
   grid-template-columns: repeat(3, 1fr);
 }
-.index-page .container .image {
+.index-page .container .card-wrapper {
   position: relative;
-  width: 100%;
   aspect-ratio: 1/1;
+}
+.index-page .container .card-wrapper p {
+  position: absolute;
+  left: 0.4rem;
+  bottom: 0.2rem;
+  font-family: "Jost";
+  font-size: 1rem;
+  font-weight: 400;
+  padding: unset;
+  margin: unset;
+  color: var(--color-bg);
+  text-shadow: 0.2rem 0.1rem 0.2rem var(--color-primary);
+  z-index: 2;
+  pointer-events: none;
+}
+.index-page .container .city-confirmed + p,
+.index-page .container .city-wishlist + p {
+  text-shadow: 0.2rem 0.1rem 0.2rem var(--color-bg-dark);
+}
+.index-page .container .image {
+  width: 100%;
+  height: 100%;
   overflow: hidden;
   padding: 0;
   margin: 0;
@@ -220,17 +241,81 @@ header nav {
 .index-page .container .image:hover {
   opacity: 1;
 }
-.index-page .container p {
-  position: absolute;
-  left: 0.4rem;
-  bottom: 0.2rem;
+.index-page .container .city-confirmed {
+  cursor: pointer;
+  background: radial-gradient(ellipse at center, transparent 40%, rgba(0, 0, 0, 0.6) 100%), var(--color-primary);
+}
+.index-page .container .city-confirmed img {
+  filter: grayscale(1) contrast(1.4);
+  mix-blend-mode: screen;
+}
+.index-page .container .city-wishlist {
+  cursor: pointer;
+  background: radial-gradient(ellipse at center, transparent 40%, rgba(0, 0, 0, 0.6) 100%), var(--color-action);
+}
+.index-page .container .city-wishlist img {
+  filter: grayscale(1) contrast(1.4);
+  mix-blend-mode: screen;
+}
+
+#wishlist-popup {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  align-items: center;
+  justify-content: center;
+}
+#wishlist-popup.visible {
+  display: flex;
+}
+#wishlist-popup #wishlist-popup-inner {
+  position: relative;
+  width: 80vw;
+  max-width: 360px;
+  padding: 0;
+  background: transparent;
+}
+#wishlist-popup #wishlist-popup-inner h3 {
   font-family: "Jost";
-  font-size: 0.8rem;
+  font-size: 16px;
+  margin: 0.3em 0 0.1em;
+  letter-spacing: 0.05em;
+}
+#wishlist-popup #wishlist-popup-inner p {
+  font-family: "Inconsolata";
   font-weight: 400;
-  padding: unset;
-  margin: unset;
-  color: var(--color-bg);
-  text-shadow: 0.2rem 0.1rem 0.2rem var(--color-primary);
+  font-size: 11px;
+  color: var(--color-bg-dark);
+  margin: 0 0 0.8rem;
+}
+#wishlist-popup #wishlist-popup-inner a {
+  font-family: "Inconsolata";
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--color-action);
+  text-decoration: none;
+  display: block;
+  margin-top: 0.8rem;
+  padding: 0;
+}
+#wishlist-popup #wishlist-popup-inner a:hover {
+  opacity: 0.7;
+}
+#wishlist-popup button#wishlist-popup-close {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: none;
+  border: none;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  cursor: pointer;
+  padding: 0;
+}
+#wishlist-popup button#wishlist-popup-close:hover {
+  opacity: 0.6;
 }
 
 @media screen and (min-width: 768px) {
@@ -242,6 +327,11 @@ header nav {
   }
   .index-page .container {
     width: 870px;
+  }
+  .index-page .container .card-wrapper p {
+    font-size: 1.4rem;
+    left: 0.6rem;
+    bottom: 0.4rem;
   }
 }
 @media screen and (min-width: 1200px) {
@@ -1061,6 +1151,37 @@ body.map-page {
   -o-object-fit: cover;
      object-fit: cover;
   display: block;
+}
+
+#map-legend {
+  position: absolute;
+  bottom: 2rem;
+  left: 0.8rem;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  font-family: "Inconsolata";
+  font-size: 10px;
+  color: var(--color-bg-dark);
+  pointer-events: none;
+}
+#map-legend .legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+#map-legend svg {
+  flex-shrink: 0;
+  overflow: visible;
+}
+#map-legend svg.dot-filled {
+  width: 10px;
+  height: 10px;
+}
+#map-legend svg.dot-confirmed {
+  width: 16px;
+  height: 16px;
 }
 
 .maplibregl-popup-content {

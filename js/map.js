@@ -7,6 +7,10 @@ function initMap() {
         attributionControl: { compact: true }
     });
 
+    // ROTATION — désactivée (pinch-zoom mobile ne doit pas tourner la carte)
+    map.dragRotate.disable();
+    map.touchZoomRotate.disableRotation();
+
     fetch('./data/cities-map.geojson')
         .then(response => response.json())
         .then(data => {
@@ -186,6 +190,25 @@ function initMap() {
             map.on('mouseenter', id, () => { map.getCanvas().style.cursor = 'pointer'; });
             map.on('mouseleave', id, () => { map.getCanvas().style.cursor = ''; });
         });
+
+        // LÉGENDE — SVG inline pour correspondre exactement aux cercles MapLibre
+        const legend = document.createElement('div');
+        legend.id = 'map-legend';
+        legend.innerHTML = `
+            <div class="legend-item">
+                <svg width="10" height="10" viewBox="0 0 10 10" style="display:block;flex-shrink:0"><circle cx="5" cy="5" r="5" fill="${colorPrimary}"/></svg>
+                Visited
+            </div>
+            <div class="legend-item">
+                <svg width="10" height="10" viewBox="0 0 10 10" style="display:block;flex-shrink:0"><circle cx="5" cy="5" r="3.2" fill="${colorBg}" stroke="${colorPrimary}" stroke-width="3"/></svg>
+                Next stop
+            </div>
+            <div class="legend-item">
+                <svg width="10" height="10" viewBox="0 0 10 10" style="display:block;flex-shrink:0"><circle cx="5" cy="5" r="5" fill="${colorAction}"/></svg>
+                Wishlist
+            </div>
+        `;
+        document.getElementById('map-container').appendChild(legend);
 
     });
 }

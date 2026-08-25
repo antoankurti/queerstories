@@ -23,16 +23,33 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          19.825580913450768,
-          41.31387074225438
+          5.385915323375854,
+          43.29571510981011
         ]
       },
       "properties": {
-        "id": "tirana_2027",
-        "name": "Tirana",
+        "id": "marseille_2027",
+        "name": "Marseille",
+        "status": "wishlist",
+        "year": "2027",
+        "cover": "media/covers/marseille.jpeg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.5690420985110265,
+          50.63180454344994
+        ]
+      },
+      "properties": {
+        "id": "liege_2027",
+        "name": "Liège",
         "status": "confirmed",
         "year": "2027",
-        "cover": "media/sao_paulo/2020/photo/000098240018.jpg"
+        "cover": "media/covers/liege.jpeg"
       }
     },
     {
@@ -45,11 +62,28 @@
         ]
       },
       "properties": {
-        "id": "tbilisi_2027",
+        "id": "tbilisi_2028",
         "name": "Tbilisi",
         "status": "wishlist",
         "year": "2027",
-        "cover": "media/sao_paulo/2020/photo/000098240018.jpg"
+        "cover": "media/covers/tbilisi.jpg"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          19.825580913450768,
+          41.31387074225438
+        ]
+      },
+      "properties": {
+        "id": "tirana_2028",
+        "name": "Tirana",
+        "status": "confirmed",
+        "year": "2027",
+        "cover": "media/covers/tirana.jpg"
       }
     }
   ]

@@ -7,24 +7,41 @@
     "status":"visited",
     "year": "2020",
     "cover": "media/sao_paulo/2020/photo/000098240018.jpg" },
+    
+  {
+    "id": "marseille_2027",
+    "name": "Marseille",
+    "lng": 5.385915323375854,
+    "lat": 43.29571510981011,
+    "status":"wishlist",
+    "year": "2027",
+    "cover": "media/covers/marseille.jpeg" },
 
   {
-    "id": "tirana_2027",
-    "name": "Tirana",
-    "lng": 19.825580913450768,
-    "lat": 41.31387074225438,
+    "id": "liege_2027",
+    "name": "Liège",
+    "lng": 5.5690420985110265,
+    "lat": 50.63180454344994,
     "status":"confirmed",
     "year": "2027",
-    "cover": "media/sao_paulo/2020/photo/000098240018.jpg" },
-
-    
-    {
-    "id": "tbilisi_2027",
+    "cover": "media/covers/liege.jpeg" }, 
+   
+  {
+    "id": "tbilisi_2028",
     "name": "Tbilisi",
     "lng": 44.78441858637173,
     "lat": 41.71508503475384,
     "status":"wishlist",
     "year": "2027",
-    "cover": "media/sao_paulo/2020/photo/000098240018.jpg" }
-]
+    "cover": "media/covers/tbilisi.jpg" },
  
+  {
+    "id": "tirana_2028",
+    "name": "Tirana",
+    "lng": 19.825580913450768,
+    "lat": 41.31387074225438,
+    "status":"confirmed",
+    "year": "2027",
+    "cover": "media/covers/tirana.jpg" }
+  
+  ]
